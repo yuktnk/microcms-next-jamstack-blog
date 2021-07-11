@@ -14,6 +14,8 @@ export default function Home({ blog }) {
           </li>
         ))}
       </ul>
+
+      <p className="mb-4">Tailwind cssのテスト</p>
     </div>
   );
 }
