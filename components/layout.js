@@ -24,7 +24,7 @@ export default function Layout({ children, home }) {
 
       <Header />
 
-      <main>{children}</main>
+      <main className="mx-auto max-w-5xl">{children}</main>
 
       <Footer />
     </>

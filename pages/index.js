@@ -9,6 +9,9 @@ export default function Home({ blog }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
+      <div className=""></div>
+
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>
@@ -18,10 +21,7 @@ export default function Home({ blog }) {
           </li>
         ))}
       </ul>
-      <button class="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">
-        ボタン
-      </button>
-      <p className="mb-4">Tailwind cssのテスト</p>
+      <button className="btn bg-red-700 hover:bg-red-500">ボタン</button>
     </Layout>
   );
 }

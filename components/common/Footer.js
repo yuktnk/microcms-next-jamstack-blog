@@ -2,16 +2,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer>
-      <div>
-        <ul>
-          <li>
-            <Link href={`/about`}>
-              <a>About</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
+    <footer className="h-16 bg-grayBlue02 text-white p-5">
+      <p className="text-center">フッターです</p>
     </footer>
   );
 };
