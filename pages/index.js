@@ -1,10 +1,14 @@
-// pages/index.js
+import Head from "next/head";
 import Link from "next/link";
+import Layout, { siteTitle } from "../components/layout";
 import { client } from "../libs/client";
 
 export default function Home({ blog }) {
   return (
-    <div>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>
@@ -14,9 +18,11 @@ export default function Home({ blog }) {
           </li>
         ))}
       </ul>
-
+      <button class="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">
+        ボタン
+      </button>
       <p className="mb-4">Tailwind cssのテスト</p>
-    </div>
+    </Layout>
   );
 }
 
