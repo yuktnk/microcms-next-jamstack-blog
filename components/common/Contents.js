@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 const Contents = (props) => {
   let blogContents = props.articles;
@@ -12,7 +12,7 @@ const Contents = (props) => {
               <a>{article.title}</a>
             </Link>
             {/* <p>{article.thumbnail.url}</p> */}
-            <Image src={article.thumbnail.url} />
+            <img src={article.thumbnail.url} />
           </li>
         ))}
       </ul>
