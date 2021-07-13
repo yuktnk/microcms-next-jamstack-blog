@@ -10,6 +10,8 @@ const Contents = (props) => {
             <Link href={`/blog/${article.id}`}>
               <a>{article.title}</a>
             </Link>
+            {/* <p>{article.thumbnail.url}</p> */}
+            <img src={article.thumbnail.url} />
           </li>
         ))}
       </ul>

@@ -3,13 +3,9 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className="h-32 bg-grayBlue02 text-white p-5">
-      <p className="text-center text-sm ">
-        ひたすら学習のアウトプットをする予定のブログ
-      </p>
+      <p className="text-center text-sm ">説明文説明文説明文説明文説明文</p>
       <Link href={`/`}>
-        <a className="block text-baseBlue text-center text-5xl mt-5">
-          yuktnk-blog
-        </a>
+        <a className="block text-baseBlue text-center text-5xl mt-5">aiueo</a>
       </Link>
 
       {/* <nav>
