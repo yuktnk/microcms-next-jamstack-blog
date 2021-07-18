@@ -2,14 +2,16 @@ import Link from "next/link";
 import Layout from "../../components/layout";
 import { client } from "../../libs/client";
 import styles from "../../styles/Article.module.scss";
-// import Moment from "react-moment";
+import Date from "../../components/date";
 
 export default function BlogId({ blog }) {
   return (
     <Layout>
       <div className="mx-auto max-w-5xl">
         <h1 className="text-4xl text-white text-center mb-4 ">{blog.title}</h1>
-        <p className="text-white text-center mb-4">{blog.publishedAt}</p>
+        <p className="text-white text-center mb-4">
+          <Date dateString={blog.publishedAt} />
+        </p>
         <p className="text-white text-center">
           {blog.category && `${blog.category.name}`}
         </p>
