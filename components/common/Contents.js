@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Contents = (props) => {
-  let blogContents = props.articles;
+  let articles = props.articles;
   return (
     <div className="w-full mr-6">
       <ul className="flex flex-wrap px-4">
-        {blogContents.map((article) => (
+        {articles.map((article) => (
           <li key={article.id} className="w-1/3 px-4 mb-4">
             {/* <p>{article.thumbnail.url}</p> */}
 
@@ -18,7 +18,7 @@ const Contents = (props) => {
                   width={500}
                   height={200}
                 />
-                <p class="text-center">{article.title}</p>
+                <p className="text-center">{article.title}</p>
               </a>
             </Link>
           </li>

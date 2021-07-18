@@ -1,7 +1,18 @@
-const Sidebar = () => {
+import Link from "next/link";
+
+const Sidebar = (props) => {
+  let categories = props.categories;
+
   return (
-    <aside className="bg-lightBlue01 w-1/3">
-      <p>サイドバーです。</p>
+    <aside className="bg-white w-1/3">
+      <h2>カテゴリー</h2>
+      <ul>
+        {categories.map((category) => (
+          <li ket={category.id} className="">
+            <p>{category.name}</p>
+          </li>
+        ))}
+      </ul>
     </aside>
   );
 };
