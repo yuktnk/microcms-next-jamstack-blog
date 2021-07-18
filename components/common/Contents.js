@@ -5,19 +5,22 @@ const Contents = (props) => {
   let blogContents = props.articles;
   return (
     <div className="w-full mr-6">
-      <ul className="flex justify-between flex-wrap">
+      <ul className="flex flex-wrap px-4">
         {blogContents.map((article) => (
-          <li key={article.id} className="border-2 w-2/5 mb-4">
-            <Link href={`/blog/${article.id}`}>
-              <a>{article.title}</a>
-            </Link>
+          <li key={article.id} className="w-1/3 px-4 mb-4">
             {/* <p>{article.thumbnail.url}</p> */}
-            <Image
-              src={article.thumbnail.url}
-              alt="Picture of the author"
-              width={500}
-              height={500}
-            />
+
+            <Link href={`/blog/${article.id}`}>
+              <a>
+                <Image
+                  src={article.thumbnail.url}
+                  alt={article.title}
+                  width={500}
+                  height={200}
+                />
+                <p class="text-center">{article.title}</p>
+              </a>
+            </Link>
           </li>
         ))}
       </ul>

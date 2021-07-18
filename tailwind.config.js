@@ -14,6 +14,11 @@ module.exports = {
         grayBlue01: "#54727A",
         grayBlue02: "#20232a",
         grayBlue03: "#282c34",
+        per30: "30%",
+
+        // backgroundImage: theme => ({
+        //   'fv-img': "url('/images/water.jpg')",
+        // })
       },
     },
   },

@@ -12,7 +12,7 @@ export default function Home({ blog }) {
 
       <div className="flex justify-between">
         <Contents articles={blog} />
-        <Sidebar />
+        {/* <Sidebar /> */}
       </div>
     </Layout>
   );

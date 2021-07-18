@@ -1,25 +1,30 @@
 import Link from "next/link";
 import Layout from "../../components/layout";
 import { client } from "../../libs/client";
-import styles from "../../styles/Home.module.scss";
+import styles from "../../styles/Article.module.scss";
+// import Moment from "react-moment";
 
 export default function BlogId({ blog }) {
   return (
     <Layout>
-      <main className={styles.main}>
-        <h1 className={styles.title}>{blog.title}</h1>
-        <p className={styles.publishedAt}>{blog.publishedAt}</p>
-        <p className="category">{blog.category && `${blog.category.name}`}</p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${blog.body}`,
-          }}
-          className={styles.post}
-        />
+      <div className="mx-auto max-w-5xl">
+        <h1 className="text-4xl text-white text-center mb-4 ">{blog.title}</h1>
+        <p className="text-white text-center mb-4">{blog.publishedAt}</p>
+        <p className="text-white text-center">
+          {blog.category && `${blog.category.name}`}
+        </p>
+        <div className={styles.postWrapper}>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `${blog.body}`,
+            }}
+            className={styles.post}
+          />
+        </div>
         <Link href="/">
-          <a>top </a>
+          <a>topへ戻る</a>
         </Link>
-      </main>
+      </div>
     </Layout>
   );
 }
