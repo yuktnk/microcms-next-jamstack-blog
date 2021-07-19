@@ -8,7 +8,7 @@ const Sidebar = (props) => {
       <h2>カテゴリー</h2>
       <ul>
         {categories.map((category) => (
-          <li ket={category.id} className="">
+          <li key={category.id} className="">
             <p>{category.name}</p>
           </li>
         ))}
