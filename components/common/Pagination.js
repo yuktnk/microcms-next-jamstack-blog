@@ -10,11 +10,11 @@ const Pagination = ({ totalCount }) => {
     [...Array(end - start + 1)].map((_, i) => start + i); // 作成した配列をmapして各数値を取り出す
 
   return (
-    <ul>
+    <ul className="flex justify-center mx-auto ">
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
-        <li key={index}>
+        <li key={index} class="mx-4">
           <Link href={`/blog/page/${number}`}>
-            <a>{number}</a>
+            <a className="block p-4">{number}</a>
           </Link>
         </li>
       ))}

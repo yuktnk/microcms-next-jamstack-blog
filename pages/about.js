@@ -1,7 +1,9 @@
-export default function About({}) {
+import Layout from "../components/layout";
+
+export default function About() {
   return (
-    <main>
+    <Layout>
       <p>Aboutページ</p>
-    </main>
+    </Layout>
   );
 }
