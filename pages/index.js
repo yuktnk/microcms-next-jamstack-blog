@@ -9,9 +9,9 @@ export default function Home({ articles, categories, totalCount }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="flex justify-between">
+      <div className="flex justify-between p-8">
         <Contents articles={articles} />
-        {/* <Sidebar categories={categories} /> */}
+        <Sidebar categories={categories} />
       </div>
       <Pagination totalCount={3} />
       {console.log(totalCount)}

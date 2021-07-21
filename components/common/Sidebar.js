@@ -4,8 +4,8 @@ const Sidebar = (props) => {
   let categories = props.categories;
 
   return (
-    <aside className="bg-white w-1/3">
-      <h2>カテゴリー</h2>
+    <aside className="bg-white w-1/3 p-8">
+      <h2 className="p-4 text-3xl">カテゴリー</h2>
       <ul>
         {categories.map((category) => (
           <li key={category.id} className="">
