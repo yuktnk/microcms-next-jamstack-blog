@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { client } from "../../../libs/client";
-import { Pagination } from "../../../components/common/index";
+import { DynamicPagination } from "../../../components/common/index";
 
 const PER_PAGE = 2;
 
-export default function BlogPageId({ articles, totalCount }) {
+const BlogPageId = ({ articles, totalCount }) => {
   return (
     <div>
       <ul>
@@ -16,10 +16,10 @@ export default function BlogPageId({ articles, totalCount }) {
           </li>
         ))}
       </ul>
-      <Pagination totalCount={totalCount} />
+      <DynamicPagination totalCount={totalCount} />
     </div>
   );
-}
+};
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
@@ -33,12 +33,9 @@ export const getStaticPaths = async () => {
 
   const pageNumbers = [];
 
-  const range = (start, end) =>
-    [...Array(end - start + 1)].map((_, i) => start + i);
+  const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
 
-  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map(
-    (repo) => `/blog/page/${repo}`
-  );
+  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map((repo) => `/blog/page/${repo}`);
 
   return { paths, fallback: false };
 };
@@ -63,3 +60,5 @@ export const getStaticProps = async (context) => {
     },
   };
 };
+
+export default BlogPageId;

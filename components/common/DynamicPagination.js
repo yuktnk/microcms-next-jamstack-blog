@@ -1,18 +1,9 @@
-import Router from "next/router";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Pagination } from "@material-ui/lab";
 
-const Pagination = ({ totalCount }) => {
+const DynamicPagination = ({ totalCount }) => {
   const PER_PAGE = 2;
-  const router = useRouter();
-  console.log(router.href);
-  console.log(router.protocol);
-  console.log(router.host);
-  console.log(router.hostname);
-  console.log(router.port);
-  console.log(router.pathname);
-  console.log(router.search);
-  console.log(router.hash);
 
   // rangeの引数に(start, end)を与えて、その値を元に配列を作成する
   // ページネーションのリスト数になる
@@ -25,10 +16,11 @@ const Pagination = ({ totalCount }) => {
           <Link href={`/blog/page/${number}`}>
             <a className="block p-4">{number}</a>
           </Link>
+          <Pagination count={PER_PAGE} variant="outlined" shape="rounded" color="secondary" page={number} />
         </li>
       ))}
     </ul>
   );
 };
 
-export default Pagination;
+export default DynamicPagination;

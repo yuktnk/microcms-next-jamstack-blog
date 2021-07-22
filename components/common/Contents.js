@@ -1,4 +1,4 @@
-import { Article, Heading02, Pagination } from "./index";
+import { Article, Heading02, DynamicPagination } from "./index";
 
 const Contents = (props) => {
   let articles = props.articles;
@@ -10,7 +10,7 @@ const Contents = (props) => {
           <Article article={article} />
         ))}
       </ul>
-      <Pagination totalCount={props.totalCount} />
+      <DynamicPagination totalCount={props.totalCount} />
     </div>
   );
 };
