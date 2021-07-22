@@ -24,7 +24,7 @@ export default function Layout({ children, home }) {
 
       <Header />
 
-      <main className="mx-auto max-w-7xl">{children}</main>
+      <main className=" py-16 bg-lightBlue01 bg-opacity-10">{children}</main>
 
       <Footer />
     </>

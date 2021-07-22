@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { client } from "../libs/client";
-import { Contents, Pagination, Sidebar } from "../components/common/index";
+import { Contents, Sidebar } from "../components/common/index";
 
 export default function Home({ articles, categories, totalCount }) {
   return (
@@ -9,12 +9,10 @@ export default function Home({ articles, categories, totalCount }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="flex justify-between p-8">
-        <Contents articles={articles} />
+      <div className="mx-auto max-w-7xl flex justify-between p-8 shadow-xl bg-white">
+        <Contents articles={articles} totalCount={totalCount} />
         <Sidebar categories={categories} />
       </div>
-      <Pagination totalCount={3} />
-      {console.log(totalCount)}
     </Layout>
   );
 }

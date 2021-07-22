@@ -12,7 +12,7 @@ const Pagination = ({ totalCount }) => {
   return (
     <ul className="flex justify-center mx-auto ">
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
-        <li key={index} class="mx-4">
+        <li key={index} className="mx-4">
           <Link href={`/blog/page/${number}`}>
             <a className="block p-4">{number}</a>
           </Link>
