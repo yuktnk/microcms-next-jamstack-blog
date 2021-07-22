@@ -16,6 +16,11 @@ module.exports = {
         grayBlue03: "#282c34",
         per30: "30%",
 
+        // category colors
+        javascript: "#f1e05a",
+        react: "#61DAFB",
+        gadget: "#54727A",
+
         // backgroundImage: theme => ({
         //   'fv-img': "url('/images/water.jpg')",
         // })

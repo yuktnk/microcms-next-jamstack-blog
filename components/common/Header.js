@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="h-48 w-full pt-2">
-      <p className="text-center text-sm ">説明文説明文説明文説明文説明文</p>
+    <header className="w-full pt-2">
+      {/* <p className="text-center text-sm ">説明文説明文説明文説明文説明文</p> */}
       <Link href={`/`}>
         <a className="block text-baseBlue text-center text-5xl mt-4">aiueo</a>
       </Link>

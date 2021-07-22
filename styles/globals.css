@@ -16,6 +16,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: 0.3s;
 }
 a:hover {
   opacity: 0.5;
@@ -24,7 +25,8 @@ a:hover {
 * {
   box-sizing: border-box;
 }
-
+/* 
 header {
-  /* background-image: url("/images/water.jpg"); */
-}
+  background-image: url("/images/water.jpg");
+  background-size: contain;
+} */
