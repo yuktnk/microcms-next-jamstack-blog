@@ -20,7 +20,7 @@ const DynamicPagination = ({ totalCount }) => {
             count={PER_PAGE}
             variant="outlined"
             shape="rounded"
-            color="primary"
+            color="secondary"
             page={number}
           />
         </li>

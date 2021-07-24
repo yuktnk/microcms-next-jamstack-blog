@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
-import { makeStyles } from "@material-ui/core/styles";
 
 const Header = () => {
   return (
@@ -13,7 +12,7 @@ const Header = () => {
       </Link>
 
       <nav className="flex justify-center my-8">
-        <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
+        <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
           <Button>
             <Link href={`/about`}>
               <a className="block px-8">About</a>
