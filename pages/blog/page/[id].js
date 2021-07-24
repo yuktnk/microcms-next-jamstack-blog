@@ -6,7 +6,7 @@ const PER_PAGE = 2;
 
 const BlogPageId = ({ articles, totalCount }) => {
   return (
-    <div>
+    <>
       <ul>
         {articles.map((article) => (
           <li key={article.id}>
@@ -17,7 +17,7 @@ const BlogPageId = ({ articles, totalCount }) => {
         ))}
       </ul>
       <DynamicPagination totalCount={totalCount} />
-    </div>
+    </>
   );
 };
 
@@ -35,7 +35,9 @@ export const getStaticPaths = async () => {
 
   const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
 
-  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map((repo) => `/blog/page/${repo}`);
+  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map(
+    (repo) => `/blog/page/${repo}`
+  );
 
   return { paths, fallback: false };
 };
