@@ -13,7 +13,12 @@ const Article = (props) => {
       <Link href={`/blog/${props.article.id}`}>
         <a className="flex h-full p-4">
           <figure className="relative w-2/5">
-            <Image src={props.article.thumbnail.url} alt={props.article.title} layout="fill" objectFit="cover" />
+            <Image
+              src={props.article.thumbnail.url}
+              alt={props.article.title}
+              layout="fill"
+              objectFit="cover"
+            />
           </figure>
           <div className="w-3/5 pl-4">
             <h3 className="text-xl mb-2 font-bold">{props.article.title}</h3>
@@ -22,7 +27,9 @@ const Article = (props) => {
                 <FontAwesomeIcon icon={faClock} className="w-4 mr-2" />
                 <Date dateString={props.article.publishedAt} />
               </p>
-              <p className={"text-white px-2 py-1 text-xs " + `bg-${props.article.category.id}`}>{props.article.category && `${props.article.category.name}`}</p>
+              <p className={"text-white px-2 py-1 text-xs " + `bg-${props.article.category.id}`}>
+                {props.article.category && `${props.article.category.name}`}
+              </p>
             </div>
             <div
               dangerouslySetInnerHTML={{

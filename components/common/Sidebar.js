@@ -12,7 +12,7 @@ const Sidebar = (props) => {
 
   return (
     <aside className="bg-white w-1/3 p-8">
-      <div class="mb-16">
+      <div className="mb-16">
         <Heading03 title="プロフィール" />
         <p className="p-4">
           ここにプロフィール文章が入る
@@ -35,7 +35,7 @@ const Sidebar = (props) => {
         </div>
       </div>
 
-      <div class="mb-16">
+      <div className="mb-16">
         <Heading03 title="カテゴリー" />
         <ul className="p-4">
           {categories.map((category) => (
@@ -46,7 +46,7 @@ const Sidebar = (props) => {
         </ul>
       </div>
 
-      <div class="mb-16">
+      <div className="mb-16">
         <Heading03 title="記事を月別で見る" />
         <ul className="p-4">
           <li>2021年7月</li>

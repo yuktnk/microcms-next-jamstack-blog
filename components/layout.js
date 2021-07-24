@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 export const siteTitle = "yuktnk blog";
 import { Header, Footer } from "./common/index";
 
@@ -16,13 +15,11 @@ export default function Layout({ children, home }) {
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
-        {/* <meta name="twitter:card" content="summary_large_image" /> */}
+        <style data-href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"></style>
+        <style data-href="https://fonts.googleapis.com/icon?family=Material+Icons"></style>
       </Head>
-
       <Header />
-
       <main className=" py-16 bg-lightBlue01 bg-opacity-10">{children}</main>
-
       <Footer />
     </>
   );
