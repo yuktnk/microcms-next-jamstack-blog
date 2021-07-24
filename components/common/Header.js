@@ -14,8 +14,8 @@ const Header = () => {
       <nav className="flex justify-center my-8">
         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
           <Button>
-            <Link href={`/about`}>
-              <a className="block px-8">About</a>
+            <Link href={`/`}>
+              <a className="block px-8">Home</a>
             </Link>
           </Button>
           <Button>
@@ -25,12 +25,7 @@ const Header = () => {
           </Button>
           <Button>
             <Link href={`/about`}>
-              <a className="block px-8">About</a>
-            </Link>
-          </Button>
-          <Button>
-            <Link href={`/about`}>
-              <a className="block px-8">About</a>
+              <a className="block px-8">Contact</a>
             </Link>
           </Button>
         </ButtonGroup>

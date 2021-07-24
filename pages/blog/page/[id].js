@@ -1,23 +1,22 @@
-import Link from "next/link";
+import Head from "next/head";
 import { client } from "../../../libs/client";
-import { DynamicPagination } from "../../../components/common/index";
+import Layout, { siteTitle } from "../../../components/layout";
+import Card from "@material-ui/core/Card";
+import { Contents, Sidebar } from "../../../components/common/index";
 
 const PER_PAGE = 2;
 
-const BlogPageId = ({ articles, totalCount }) => {
+const BlogPageId = ({ articles, totalCount, categories }) => {
   return (
-    <>
-      <ul>
-        {articles.map((article) => (
-          <li key={article.id}>
-            <Link href={`blog/${article.id}`}>
-              <a>{article.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <DynamicPagination totalCount={totalCount} />
-    </>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <Card className="mx-auto max-w-7xl flex justify-between p-8">
+        <Contents articles={articles} totalCount={totalCount} />
+        <Sidebar categories={categories} />
+      </Card>
+    </Layout>
   );
 };
 
@@ -31,7 +30,7 @@ export const getStaticPaths = async () => {
 
   const repos = await res.json();
 
-  const pageNumbers = [];
+  // const pageNumbers = [];
 
   const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
 
