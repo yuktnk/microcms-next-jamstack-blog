@@ -1,11 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Date from "../../components/date";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faRss } from "@fortawesome/free-solid-svg-icons";
-// import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-// import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
+
+import ScheduleIcon from "@material-ui/icons/Schedule";
 
 const Article = (props) => {
   return (
@@ -24,7 +21,7 @@ const Article = (props) => {
             <h3 className="text-xl mb-2 font-bold">{props.article.title}</h3>
             <div className="flex justify-between items-center text-grayBlue01 text-sm mb-2">
               <p className="flex items-center">
-                <FontAwesomeIcon icon={faClock} className="w-4 mr-2" />
+                <ScheduleIcon className="w-4 mr-2" />
                 <Date dateString={props.article.publishedAt} />
               </p>
               <p className={"text-white px-2 py-1 text-xs " + `bg-${props.article.category.id}`}>

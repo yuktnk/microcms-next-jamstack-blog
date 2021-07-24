@@ -2,10 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Heading03 } from "./index";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import InstagramIcon from "@material-ui/icons/Instagram";
 
 const Sidebar = (props) => {
   let categories = props.categories;
@@ -23,14 +22,14 @@ const Sidebar = (props) => {
           <br />
         </p>
         <div className="flex p-4">
-          <a href="#">
-            <FontAwesomeIcon icon={faGithub} className="w-8 mr-4" />
+          <a href="#" className="block mr-4">
+            <GitHubIcon className="w-8 " />
           </a>
-          <a href="#">
-            <FontAwesomeIcon icon={faTwitter} className="w-8 mr-4" />
+          <a href="#" className="block mr-4">
+            <TwitterIcon />
           </a>
-          <a href="#">
-            <FontAwesomeIcon icon={faInstagram} className="w-8" />
+          <a href="#" className="block mr-4">
+            <InstagramIcon />
           </a>
         </div>
       </div>
