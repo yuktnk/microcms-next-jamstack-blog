@@ -15,17 +15,17 @@ const Header = () => {
         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
           <Button>
             <Link href={`/`}>
-              <a className="block px-8">Home</a>
+              <a className="block sm:px-8 px-2">Home</a>
             </Link>
           </Button>
           <Button>
             <Link href={`/about`}>
-              <a className="block px-8">About</a>
+              <a className="block sm:px-8 px-2">About</a>
             </Link>
           </Button>
           <Button>
             <Link href={`/about`}>
-              <a className="block px-8">Contact</a>
+              <a className="block sm:px-8 px-2">Contact</a>
             </Link>
           </Button>
         </ButtonGroup>

@@ -12,7 +12,7 @@ const BlogPageId = ({ articles, totalCount, categories }) => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Card className="mx-auto max-w-7xl flex justify-between p-8">
+      <Card className="mx-auto max-w-7xl sm:flex block justify-between sm:p-8 p-2">
         <Contents articles={articles} totalCount={totalCount} />
         <Sidebar categories={categories} />
       </Card>

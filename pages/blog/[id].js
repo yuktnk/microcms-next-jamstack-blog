@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { client } from "../../libs/client";
 import styles from "../../styles/Article.module.scss";
 import Date from "../../components/date";
+import Card from "@material-ui/core/Card";
 
 export default function BlogId({ blog }) {
   return (
@@ -13,14 +14,14 @@ export default function BlogId({ blog }) {
           <Date dateString={blog.publishedAt} />
         </p>
         <p className="text-white text-center">{blog.category && `${blog.category.name}`}</p>
-        <div className={styles.postWrapper}>
+        <Card className={styles.postWrapper}>
           <div
             dangerouslySetInnerHTML={{
               __html: `${blog.body}`,
             }}
             className={styles.post}
           />
-        </div>
+        </Card>
         <Link href="/">
           <a>topへ戻る</a>
         </Link>

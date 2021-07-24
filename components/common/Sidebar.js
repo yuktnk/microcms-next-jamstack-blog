@@ -10,7 +10,7 @@ const Sidebar = (props) => {
   let categories = props.categories;
 
   return (
-    <aside className="w-1/3 p-8">
+    <aside className="sm:w-1/3 sm:p-8 sm:mt-0 mt-10">
       <div className="mb-16">
         <Heading03 title="プロフィール" />
         <p className="p-4">
