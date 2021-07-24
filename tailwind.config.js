@@ -14,6 +14,11 @@ module.exports = {
         grayBlue01: "#54727A",
         grayBlue02: "#20232a",
         grayBlue03: "#282c34",
+
+        accentPink: "#e47afa",
+
+        materialBackground01: "#424242",
+        materialBackground02: "#303030",
         per30: "30%",
 
         // category colors

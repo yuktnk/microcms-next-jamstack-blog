@@ -8,12 +8,14 @@ import Card from "@material-ui/core/Card";
 export default function BlogId({ blog }) {
   return (
     <Layout>
-      <div className="mx-auto max-w-5xl">
-        <h1 className="text-4xl text-white text-center mb-4 ">{blog.title}</h1>
-        <p className="text-white text-center mb-4">
-          <Date dateString={blog.publishedAt} />
-        </p>
-        <p className="text-white text-center">{blog.category && `${blog.category.name}`}</p>
+      <div className="mx-auto max-w-7xl bg-materialBackground01">
+        <div className="pt-16">
+          <h1 className="text-4xl text-white text-center mb-4 ">{blog.title}</h1>
+          <p className="text-white text-center mb-4">
+            <Date dateString={blog.publishedAt} />
+          </p>
+          <p className="text-white text-center">{blog.category && `${blog.category.name}`}</p>
+        </div>
         <Card className={styles.postWrapper}>
           <div
             dangerouslySetInnerHTML={{

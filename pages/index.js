@@ -10,7 +10,7 @@ export default function Home({ articles, categories, totalCount }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Card className="mx-auto max-w-7xl sm:flex block justify-between sm:p-8 p-2">
+      <Card className="mx-auto max-w-7xl sm:flex block justify-between p-0 sm:p-2 md:p-4 lg:p-8 ">
         <Contents articles={articles} totalCount={totalCount} />
         <Sidebar categories={categories} />
       </Card>
