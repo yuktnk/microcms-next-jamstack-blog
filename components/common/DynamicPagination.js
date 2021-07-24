@@ -16,7 +16,13 @@ const DynamicPagination = ({ totalCount }) => {
           <Link href={`/blog/page/${number}`}>
             <a className="block p-4">{number}</a>
           </Link>
-          <Pagination count={PER_PAGE} variant="outlined" shape="rounded" color="secondary" page={number} />
+          <Pagination
+            count={PER_PAGE}
+            variant="outlined"
+            shape="rounded"
+            color="primary"
+            page={number}
+          />
         </li>
       ))}
     </ul>

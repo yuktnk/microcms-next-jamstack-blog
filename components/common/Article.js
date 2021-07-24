@@ -2,14 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Date from "../../components/date";
 
-import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 
 const Article = (props) => {
@@ -29,7 +23,7 @@ const Article = (props) => {
               </figure>
               <div className="w-3/5 pl-4 h-full">
                 <h3 className="text-xl mb-2 font-bold">{props.article.title}</h3>
-                <div className="flex justify-between items-center text-grayBlue01 text-sm mb-2">
+                <div className="flex justify-between items-center text-sm mb-2">
                   <p className="flex items-center">
                     <ScheduleIcon className="w-4 mr-2" />
                     <Date dateString={props.article.publishedAt} />
@@ -44,7 +38,7 @@ const Article = (props) => {
                   dangerouslySetInnerHTML={{
                     __html: `${props.article.body}`,
                   }}
-                  className="overflow-hidden h-1/2 text-grayBlue01"
+                  className="overflow-hidden h-1/2 "
                 />
               </div>
             </CardActionArea>

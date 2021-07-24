@@ -2,9 +2,15 @@ import Head from "next/head";
 export const siteTitle = "yuktnk blog";
 import { Header, Footer } from "./common/index";
 
+import { ThemeProvider } from "@material-ui/styles";
+import { MyTheme } from "./theme";
+import Box from "@material-ui/core/Box";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 export default function Layout({ children, home }) {
   return (
-    <>
+    <ThemeProvider theme={MyTheme}>
+      <CssBaseline />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Learn how to build a personal website using Next.js" />
@@ -19,8 +25,11 @@ export default function Layout({ children, home }) {
         <style data-href="https://fonts.googleapis.com/icon?family=Material+Icons"></style>
       </Head>
       <Header />
-      <main className=" py-16 bg-lightBlue01 bg-opacity-10">{children}</main>
+      {/* <main className=" py-16 bg-lightBlue01 bg-opacity-10">{children}</main> */}
+      <main className=" py-16">
+        <Box bgcolor="primary.main">{children}</Box>
+      </main>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }

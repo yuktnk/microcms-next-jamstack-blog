@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { client } from "../libs/client";
 import { Contents, Sidebar } from "../components/common/index";
+import Card from "@material-ui/core/Card";
 
 export default function Home({ articles, categories, totalCount }) {
   return (
@@ -9,10 +10,10 @@ export default function Home({ articles, categories, totalCount }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="mx-auto max-w-7xl flex justify-between p-8 shadow-xl bg-white">
+      <Card className="mx-auto max-w-7xl flex justify-between p-8">
         <Contents articles={articles} totalCount={totalCount} />
         <Sidebar categories={categories} />
-      </div>
+      </Card>
     </Layout>
   );
 }
