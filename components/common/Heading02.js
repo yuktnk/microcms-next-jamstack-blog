@@ -1,6 +1,6 @@
 const Heading02 = (props) => {
   return (
-    <h2 className="py-2 px-4 text-2xl bg-grayBlue03 text-white  border-b border-accentPink border-opacity-50">
+    <h2 className="py-2 px-4 text-2xl bg-grayBlue03 text-white  border-b border-baseBlue border-opacity-50">
       {props.title}
     </h2>
   );

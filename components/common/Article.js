@@ -18,7 +18,7 @@ const Article = (props) => {
   return (
     <li
       key={props.article.id}
-      className="w-full mb-4 sm:px-4 px-2 sm:py-8 py-4 border-b border-grayBlue01"
+      className="w-full mb-12 pb-8 sm:px-4 px-2 border-b border-baseBlue border-opacity-50"
     >
       {/* <motion.div whileHover="hover" variants={frameVariants} transition={transition}> */}
       <Link href={`/blog/${props.article.id}`}>

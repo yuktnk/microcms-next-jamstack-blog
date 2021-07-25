@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="w-full h-96 ">
       {/* <p className="text-center text-sm ">説明文説明文説明文説明文説明文</p> */}
-      <div className="pt-16 h-full bg-black bg-opacity-10">
+      <div className="pt-16 h-full bg-black bg-opacity-20">
         <Link href={`/`}>
           <a className="block text-baseBlue text-center text-5xl pt-4">aiueo</a>
         </Link>

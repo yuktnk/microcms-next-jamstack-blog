@@ -6,36 +6,48 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import Avatar from "@material-ui/core/Avatar";
 
 const Sidebar = (props) => {
   let categories = props.categories;
 
   return (
-    <aside className="sm:w-1/3 p-0 sm:p-2 md:p-4 lg:p-8 sm:mt-0 mt-10">
-      <div className="mb-16">
-        <Heading03 title="プロフィール" />
-        <p className="px-2 py-4">
-          ここにプロフィール文章が入る
-          <br />
-          ここにプロフィール文章が入ここにプロフィール文章が入る
-          <br />
-          ここにプロフィール文章が入る
-          <br />
-        </p>
-        <div className="flex p-2">
-          <a href="#" className="block mr-4">
-            <GitHubIcon className="w-8 " />
-          </a>
-          <a href="#" className="block mr-4">
-            <TwitterIcon />
-          </a>
-          <a href="#" className="block mr-4">
-            <InstagramIcon />
-          </a>
+    <aside className="sm:w-1/3 px-5 mt-10 sm:mt-0 py-7 sm:py-0">
+      <Card className="mb-16">
+        <figure className="relative h-44">
+          <Image src="/images/profile.jpg" art="bg image" layout="fill" objectFit="cover" />
+        </figure>
+        <div className="p-4 relative">
+          <p className="pt-16 pb-4 font-bold text-center text-xl">TNK YUK</p>
+          <p className="text-base">
+            最強のポケモンをつくりたいという人間のエゴによって、この世に生み落とされた伝説のポケモン。
+            <br />
+            拘束され、最強の兵器としての実験を繰り返されていくうちに、その心の中に、自分を生み出した人間に対する憎悪の念を宿すようになった。
+          </p>
+          <div className="flex justify-center mt-4">
+            <a href="#" className="block mx-4">
+              <GitHubIcon />
+            </a>
+            <a href="#" className="block mx-4">
+              <TwitterIcon />
+            </a>
+            <a href="#" className="block mx-4">
+              <InstagramIcon />
+            </a>
+          </div>
+          {/* <figure className="absolute -top-12 left-1/2 transform -translate-x-1/2 h-24 w-24 rounded-3xl">
+            <Image src="/images/hydrangea.jpg" art="bg image" layout="fill" objectFit="cover" />
+          </figure> */}
+          <Avatar
+            alt="Yuk Tnk"
+            src="/images/person.jpg"
+            className="absolute -top-12 left-1/2 transform -translate-x-1/2 h-28 w-28 border border-materialBackground02 "
+          />
         </div>
-      </div>
+      </Card>
 
-      <div className="mb-16">
+      <Card className="mb-16">
         <Heading03 title="カテゴリー" />
         <ul className="p-2">
           {categories.map((category) => (
@@ -44,9 +56,9 @@ const Sidebar = (props) => {
             </li>
           ))}
         </ul>
-      </div>
+      </Card>
 
-      <div className="mb-16">
+      <Card>
         <Heading03 title="記事を月別で見る" />
         <ul className="p-2">
           <li>
@@ -62,7 +74,7 @@ const Sidebar = (props) => {
             <Button>2021年4月</Button>
           </li>
         </ul>
-      </div>
+      </Card>
     </aside>
   );
 };
