@@ -13,7 +13,7 @@ const Sidebar = (props) => {
   let categories = props.categories;
 
   return (
-    <aside className="sm:w-1/3 px-5 sm:pl-5 sm:pr-0 mt-10 sm:mt-0 py-5 sm:py-0">
+    <aside className="sm:w-1/3 px-4 sm:pl-4 sm:pr-0 mt-8 sm:mt-0 py-4 sm:py-0">
       <Card className="mb-16">
         <figure className="relative h-44">
           <Image src="/images/profile.jpg" art="bg image" layout="fill" objectFit="cover" />

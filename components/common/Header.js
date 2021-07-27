@@ -24,7 +24,7 @@ const Header = () => {
               </Link>
             </Button>
             <Button>
-              <Link href={`/about`}>
+              <Link href={`/contact`}>
                 <a className="block sm:px-8 px-2">Contact</a>
               </Link>
             </Button>
