@@ -19,4 +19,9 @@ export const MyTheme = createTheme({
       // default: "#121212",
     },
   },
+  typography: {
+    button: {
+      textTransform: "none" // Material UIで生成されるボタンの英字が大文字になることを防ぐ
+    }
+  }
 });
