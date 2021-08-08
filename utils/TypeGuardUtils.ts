@@ -1,4 +1,4 @@
-// import Contact from "../models/Contact";
+// import Contact from "../pages/contact/Contact";
 
 // const isContact = (item: unknown): item is Contact => {
 //   const target = item as Contact;
