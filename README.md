@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## ◆ 本番URL
+https://www.tanipu-blog.com/
+## ◆ 使用技術
+### フロントエンド
+- React
+- Next.js
+- Tailwind CSS
+- Material UI
+- CSS modules
 
-## Getting Started
+### バックエンド（CMS）
+- microCMS
 
-First, run the development server:
+### インフラ
+- Vercel（Hosting / Auto Deploy）
+- AWS Route53（ドメイン）
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## ◆ 実装したい機能（★は実装済）
+- SSG化　★
+- TailwindCSS、Material UI導入　★
+- microCMS投稿で投稿をした際に自動ビルド　★  
+- masterリポシトリプッシュ時に自動ビルド　★
+- microCMSでコンテンツを管理　★
+- ページネーション　★
+- カテゴリ機能
+- 検索機能
+- お問い合わせ機能
+- 過去記事月別
+- プロフィール
+- SNSシェア
+- 新規投稿記事にNewアイコン付与
+- meta、OGP
+- PWA
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## ◆ 作成した経緯
+ありきたりだが、日々自己学習や実務でインプットした知識や経験をアウトプットをすることで知識の定着化したいと考えた。  
+  
+実務ではWordPressを構築することが多いためWordPressを利用することも考えたが、自己学習でReact/Next.jsを学んでいたため、自身の学びのためにもHeadlessCMSでの構築にチャレンジ中。  
+  
+また、実務でvue.js/Nuxt.jsを使用し構築を行う際、個人ブログの記事に助けられたため、どこかで誰かの役に立てばなという淡い気持ちもあります。
