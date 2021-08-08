@@ -5,7 +5,7 @@ import { useForm, Controller } from "react-hook-form";
 import { NextPage } from "next";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers";
-import Contact from "../../components/common/index";
+import Contact from "../../../components/common/index";
 import { useRouter } from "next/router";
 
 const ContactIndex: NextPage = () => {
