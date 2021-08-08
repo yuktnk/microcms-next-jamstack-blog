@@ -11,7 +11,9 @@ import { useRouter } from "next/router";
 const ContactIndex: NextPage = () => {
   const router = useRouter();
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+  // const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+  const WRITE_API_KEY = process.env.WRITE_API_KEY;
+
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("名前は必須項目です"),
@@ -23,23 +25,35 @@ const ContactIndex: NextPage = () => {
 
   const onSubmit = async (contact: Contact): Promise<void> => {
     try {
-      await fetch(baseUrl + "/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-        },
-        body: JSON.stringify(contact),
-      }).then((res) => {
-        if (!res.ok) {
-          throw Error(`${res.status} ${res.statusText}`);
-        }
-      });
-
-      // void router.push("/contact/success");
+    fetch("https://yuktnk-blog.microcms.io/api/v1/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-WRITE-API-KEY": "1fc621f0-722f-4af0-b9d0-d029e8015cf9",
+      },
+      body: JSON.stringify(contact)
+    })
+    void router.push("/contact/success");
     } catch (err) {
-      // void router.push("/contact/error");
+      void router.push("/contact/error");
     }
-  };
+  }
+    // try {
+    //   await fetch("/api/contact", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json; charset=utf-8",
+    //     },
+    //     body: JSON.stringify(contact),
+    //   }).then((res) => {
+    //     if (!res.ok) {
+    //       // throw Error(`${res.status} ${res.statusText}`);
+    //     }
+    //   });
+    // void router.push("/contact/success");
+    // } catch (err) {
+    //   void router.push("/contact/error");
+    // }
 
   const { control, handleSubmit, errors } = useForm<Contact>({
     mode: "onBlur",
@@ -99,14 +113,13 @@ const ContactIndex: NextPage = () => {
             defaultValue=""
             error={!!errors.body?.message}
           />
-          {console.log(errors)}
           {errors.body && <p className={style.error}>{errors.body.message}</p>}
         </Grid>
       </Grid>
       <Button
         type="submit"
         variant="contained"
-        className={style.send}
+        // className={style.send}
         aria-label="送信"
       >
         送信

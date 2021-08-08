@@ -28,7 +28,7 @@ const contact = async (
     return res.status(401).json({ message: "Unauthorized" });
   }
 
-  res.status(200).json({ message: "OK" });
+  res.status(200).json({ message: "OKです" });
 
   res.end("Contact enabled");
 };
