@@ -16,23 +16,26 @@ const Sidebar = (props) => {
     <aside className="sm:w-1/3 px-4 sm:pl-4 sm:pr-0 mt-8 sm:mt-0 py-4 sm:py-0">
       <Card className="mb-16">
         <figure className="relative h-44">
-          <Image src="/images/profile.jpg" art="bg image" layout="fill" objectFit="cover" />
+          <Image src="/images/profile.jpg" art="背景画像" layout="fill" objectFit="cover" />
         </figure>
-        <div className="p-4 relative">
-          <p className="pt-16 pb-4 font-bold text-center text-xl">TNK YUK</p>
-          <p className="text-base">
-            最強のポケモンをつくりたいという人間のエゴによって、この世に生み落とされた伝説のポケモン。
-            <br />
-            拘束され、最強の兵器としての実験を繰り返されていくうちに、その心の中に、自分を生み出した人間に対する憎悪の念を宿すようになった。
+        <div className="p-8 relative">
+          <p className="pt-8 pb-4 font-bold text-center text-xl">tanipu</p>
+          <p className="text-base text-center">
+            都内の受託開発企業に属する
+            <br/>
+            なんちゃってフロントエンドエンジニア。
+            <br/>
+            <br/>
+            日々の学習をアウトプットします。
           </p>
           <div className="flex justify-center mt-4">
-            <a href="#" className="block mx-4">
+            <a href="https://github.com/yuktnk/" target="_blank" rel="noopener noreferrer" className="block mx-4">
               <GitHubIcon />
             </a>
-            <a href="#" className="block mx-4">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="block mx-4">
               <TwitterIcon />
             </a>
-            <a href="#" className="block mx-4">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="block mx-4">
               <InstagramIcon />
             </a>
           </div>
@@ -40,7 +43,7 @@ const Sidebar = (props) => {
             <Image src="/images/hydrangea.jpg" art="bg image" layout="fill" objectFit="cover" />
           </figure> */}
           <Avatar
-            alt="Yuk Tnk"
+            alt="tanipu"
             src="/images/person.jpg"
             className="absolute -top-12 left-1/2 transform -translate-x-1/2 h-28 w-28 border border-materialBackground02 "
           />
@@ -48,7 +51,7 @@ const Sidebar = (props) => {
       </Card>
 
       <Card className="mb-16">
-        <Heading03 title="カテゴリー" />
+        <Heading03 title="Category" />
         <ul className="p-2">
           {categories.map((category) => (
             <li key={category.id} className="">
@@ -59,7 +62,7 @@ const Sidebar = (props) => {
       </Card>
 
       <Card>
-        <Heading03 title="記事を月別で見る" />
+        <Heading03 title="Archive" />
         <ul className="p-2">
           <li>
             <Button>2021年7月</Button>
