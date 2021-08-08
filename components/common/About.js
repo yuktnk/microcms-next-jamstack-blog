@@ -3,7 +3,7 @@ import Card from "@material-ui/core/Card";
 const Contents = () => {
   return (
     <div className="w-full sm:w-2/3 px-4 sm:pl-0 sm:pr-4 py-4 sm:py-0">
-      <Card className="p-8">
+      <Card className="p-4 sm:p-8">
         <h3 className="text-xl">◇ 名前</h3>
         <p className="text-base mt-2 mb-8">tanipu</p>
 

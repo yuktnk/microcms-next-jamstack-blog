@@ -17,7 +17,7 @@ const Sidebar = (props) => {
         <div className="py-8 px-4 sm:p-8 relative">
           <p className="pt-8 pb-4 font-bold text-center text-xl">tanipu</p>
           <p className="text-sm sm:text-base text-center mb-4">
-            都内の受託開発企業に属する
+            都内受託開発企業に在籍中
             <br/>
             なんちゃってフロントエンドエンジニア。
             <br/>
@@ -37,7 +37,7 @@ const Sidebar = (props) => {
       </Card>
 
       <Card className="mb-16">
-        <Heading03 title="Category" />
+        <Heading03 title="Category(構築中)" />
         <ul className="p-2">
           {categories.map((category) => (
             <li key={category.id} className="">
@@ -48,7 +48,7 @@ const Sidebar = (props) => {
       </Card>
 
       <Card>
-        <Heading03 title="Archive" />
+        <Heading03 title="Archive(構築中)" />
         <ul className="p-2">
           <li>
             <Button>2021年7月</Button>
