@@ -1,5 +1,5 @@
 import Head from "next/head";
-export const siteTitle = "yuktnk blog";
+export const siteTitle = "tanipu blog";
 import { Header, Footer } from "./common/index";
 
 import { ThemeProvider } from "@material-ui/styles";
@@ -26,7 +26,7 @@ export default function Layout({ children, home }) {
       </Head>
       <Header />
       {/* <main className=" py-16 bg-lightBlue01 bg-opacity-10">{children}</main> */}
-      <Box component="main" bgcolor="primary.main" className="py-4 sm:py-12 px-4 sm:px-0 -mt-48">
+      <Box component="main" bgcolor="primary.main" className="p-4 sm:py-12 sm:px-4 -mt-48">
         {children}
       </Box>
       <Footer />

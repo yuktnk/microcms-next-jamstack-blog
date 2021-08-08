@@ -24,13 +24,15 @@ https://www.tanipu-blog.com/
 - ページネーション　★
 - カテゴリ機能
 - 検索機能
-- お問い合わせ機能
+- お問い合わせ機能（web hookを使用してslackに通知したい）
 - 過去記事月別
 - プロフィール
 - SNSシェア
 - 新規投稿記事にNewアイコン付与
 - meta、OGP
 - PWA
+- TypeScript化
+- Photo Galleryページ構築（趣味の写真をUPしてみたい）
 
 
 ## ◆ 作成した経緯

@@ -1,9 +1,9 @@
-import Link from "next/link";
-
+import { SNS } from "./index"
 const Footer = () => {
   return (
-    <footer className="h-16 p-5">
-      <p className="text-center">フッターです</p>
+    <footer className="p-8 bg-grayBlue02">
+      <SNS />
+      <p class="text-center text-xs mt-4 text-grayBlue01">© 2021 tanipu</p>
     </footer>
   );
 };

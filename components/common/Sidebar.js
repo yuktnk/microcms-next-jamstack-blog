@@ -1,10 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Heading03 } from "./index";
-
-import GitHubIcon from "@material-ui/icons/GitHub";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import { Heading03, SNS } from "./index";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import Avatar from "@material-ui/core/Avatar";
@@ -18,9 +14,9 @@ const Sidebar = (props) => {
         <figure className="relative h-44">
           <Image src="/images/profile.jpg" art="背景画像" layout="fill" objectFit="cover" />
         </figure>
-        <div className="p-8 relative">
+        <div className="py-8 px-4 sm:p-8 relative">
           <p className="pt-8 pb-4 font-bold text-center text-xl">tanipu</p>
-          <p className="text-base text-center">
+          <p className="text-sm sm:text-base text-center mb-4">
             都内の受託開発企業に属する
             <br/>
             なんちゃってフロントエンドエンジニア。
@@ -28,17 +24,7 @@ const Sidebar = (props) => {
             <br/>
             日々の学習をアウトプットします。
           </p>
-          <div className="flex justify-center mt-4">
-            <a href="https://github.com/yuktnk/" target="_blank" rel="noopener noreferrer" className="block mx-4">
-              <GitHubIcon />
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="block mx-4">
-              <TwitterIcon />
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="block mx-4">
-              <InstagramIcon />
-            </a>
-          </div>
+          <SNS />
           {/* <figure className="absolute -top-12 left-1/2 transform -translate-x-1/2 h-24 w-24 rounded-3xl">
             <Image src="/images/hydrangea.jpg" art="bg image" layout="fill" objectFit="cover" />
           </figure> */}
