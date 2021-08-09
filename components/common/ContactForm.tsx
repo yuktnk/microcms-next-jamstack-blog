@@ -28,7 +28,7 @@ const ContactForm: NextPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          "X-WRITE-API-KEY": "1fc621f0-722f-4af0-b9d0-d029e8015cf9"
+          "X-WRITE-API-KEY": process.env.WRITE_API_KEY,
         },
         body: JSON.stringify(contact)
       })
