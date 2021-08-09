@@ -29,7 +29,7 @@ const ContactForm: NextPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          "X-WRITE-API-KEY": process.env.WRITE_API_KEY
+          "X-WRITE-API-KEY": process.env.["WRITE_API_KEY"]
         },
         body: JSON.stringify(contact)
       })
