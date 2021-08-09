@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 const ContactForm: NextPage = () => {
   const router = useRouter();
 
+  const WRITE_API_KEY = process.env.WRITE_API_KEY;
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("名前は必須項目です"),
@@ -29,7 +30,7 @@ const ContactForm: NextPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          "X-WRITE-API-KEY": process.env.["WRITE_API_KEY"]
+          "X-WRITE-API-KEY": WRITE_API_KEY
         },
         body: JSON.stringify(contact)
       })
