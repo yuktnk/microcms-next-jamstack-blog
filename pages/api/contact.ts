@@ -30,7 +30,7 @@ const contact = async (
 
   res.status(200).json({ message: "OK" });
 
-  res.end("Contact enabled");
+  // res.end("Contact enabled");
 };
 
 export default contact;
