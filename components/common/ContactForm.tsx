@@ -36,7 +36,7 @@ const ContactForm: NextPage = () => {
     // } catch (err) {
     //   void router.push("/contact/error");
     // }
-    await fetch("/api/contact", {
+    await fetch("/pages/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
