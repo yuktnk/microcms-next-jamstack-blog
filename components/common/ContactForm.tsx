@@ -42,11 +42,7 @@ const ContactForm: NextPage = () => {
         "Content-Type": "application/json; charset=utf-8",
       },
       body: JSON.stringify(contact),
-    }).then((res) => {
-      if (!res.ok) {
-        throw Error(`${res.status} ${res.statusText}`);
-      }
-    });
+    })
 
     void router.push("/contact/success");
 
