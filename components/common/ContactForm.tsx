@@ -36,23 +36,38 @@ const ContactForm: NextPage = () => {
     // } catch (err) {
     //   void router.push("/contact/error");
     // }
-    try {
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-        },
-        body: JSON.stringify(contact),
-      }).then((res) => {
-        if (!res.ok) {
-          throw Error(`${res.status} ${res.statusText}`);
-        }
-      });
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+      body: JSON.stringify(contact),
+    }).then((res) => {
+      if (!res.ok) {
+        throw Error(`${res.status} ${res.statusText}`);
+      }
+    });
 
-      void router.push("/contact/success");
-    } catch (err) {
-      void router.push("/contact/error");
-    }
+    void router.push("/contact/success");
+
+
+    // try {
+    //   await fetch("/api/contact", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json; charset=utf-8",
+    //     },
+    //     body: JSON.stringify(contact),
+    //   }).then((res) => {
+    //     if (!res.ok) {
+    //       throw Error(`${res.status} ${res.statusText}`);
+    //     }
+    //   });
+
+    //   void router.push("/contact/success");
+    // } catch (err) {
+    //   void router.push("/contact/error");
+    // }
   }
 
   const { control, handleSubmit, errors } = useForm<Contact>({
