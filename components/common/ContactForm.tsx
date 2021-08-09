@@ -13,6 +13,8 @@ import { useRouter } from "next/router";
 const ContactForm: NextPage = () => {
   const router = useRouter();
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("名前は必須項目です"),
     email: Yup.string()
@@ -36,34 +38,25 @@ const ContactForm: NextPage = () => {
     // } catch (err) {
     //   void router.push("/contact/error");
     // }
-    await fetch("/pages/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-      },
-      body: JSON.stringify(contact),
-    })
-
-    void router.push("/");
 
 
-    // try {
-    //   await fetch("/api/contact", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json; charset=utf-8",
-    //     },
-    //     body: JSON.stringify(contact),
-    //   }).then((res) => {
-    //     if (!res.ok) {
-    //       throw Error(`${res.status} ${res.statusText}`);
-    //     }
-    //   });
+    try {
+      await fetch(baseUrl + "/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contact),
+      }).then((res) => {
+        if (!res.ok) {
+          throw Error(`${res.status} ${res.statusText}`);
+        }
+      });
 
-    //   void router.push("/contact/success");
-    // } catch (err) {
-    //   void router.push("/contact/error");
-    // }
+      void router.push("/contact/success");
+    } catch (err) {
+      void router.push("/contact/error");
+    }
   }
 
   const { control, handleSubmit, errors } = useForm<Contact>({
