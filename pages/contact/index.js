@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { client } from "../libs/client";
-import Layout, { siteTitle } from "../components/layout";
-import { About, Sidebar } from "../components/common/index";
+import { client } from "../../libs/client";
+import Layout, { siteTitle } from "../../components/layout";
+import { ContactForm, Sidebar } from "../../components/common/index";
 import Card from "@material-ui/core/Card";
 
 export default function AboutIndex({ articles, categories, totalCount }) {
@@ -11,7 +11,7 @@ export default function AboutIndex({ articles, categories, totalCount }) {
         <title>{siteTitle}</title>
       </Head>
       <Card className="mx-auto max-w-7xl sm:flex block justify-between p-0 sm:p-2 md:p-4 lg:p-8 ">
-        <About />
+        <ContactForm />
         <Sidebar categories={categories} />
       </Card>
     </Layout>

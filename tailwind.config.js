@@ -16,6 +16,7 @@ module.exports = {
         grayBlue03: "#282c34",
 
         accentPink: "#e47afa",
+        errorRed: "#f44336",
 
         materialBackground01: "#424242",
         materialBackground02: "#303030",
