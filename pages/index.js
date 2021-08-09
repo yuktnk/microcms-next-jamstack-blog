@@ -4,7 +4,9 @@ import { client } from "../libs/client";
 import { Contents, Sidebar } from "../components/common/index";
 import Card from "@material-ui/core/Card";
 
+
 export default function Home({ articles, categories, totalCount }) {
+
   return (
     <Layout home>
       <Head>
@@ -25,7 +27,6 @@ export const getStaticProps = async () => {
     queries: { limit: 2 },
   });
   const categories = await client.get({ endpoint: "categories" });
-
   return {
     props: {
       articles: articlesData.contents,

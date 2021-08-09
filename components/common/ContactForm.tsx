@@ -9,9 +9,10 @@ import { Contact, Heading02 } from "../../components/common/index"
 import { useRouter } from "next/router";
 
 
+
 const ContactForm: NextPage = () => {
   const router = useRouter();
-  const WRITE_API_KEY = process.env.WRITE_API_KEY;
+
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("名前は必須項目です"),
@@ -27,8 +28,8 @@ const ContactForm: NextPage = () => {
       fetch("https://yuktnk-blog.microcms.io/api/v1/contacts", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "X-WRITE-API-KEY": WRITE_API_KEY
+          "Content-Type": "application/json; charset=utf-8",
+          "X-WRITE-API-KEY": process.env.WRITE_API_KEY
         },
         body: JSON.stringify(contact)
       })
@@ -50,7 +51,7 @@ const ContactForm: NextPage = () => {
     <div className="w-full sm:w-2/3 px-4 sm:pl-0 sm:pr-4 py-4 sm:py-0">
       <Card>
         <Heading02 title="お問い合わせ" />
-        <form onSubmit={handleSubmit(onSubmit)} noValidate className="p-8">
+        <form onSubmit={handleSubmit(onSubmit)} noValidate className="px-4 py-8 sm:p-8">
           <div className="mb-8">
             <Controller
               as={TextField}
