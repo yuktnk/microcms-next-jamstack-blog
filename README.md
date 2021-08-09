@@ -22,16 +22,20 @@ https://www.tanipu-blog.com/
 - masterリポシトリプッシュ時に自動ビルド　★
 - microCMSでコンテンツを管理　★
 - ページネーション　★
-- カテゴリ機能
+- 投稿にカテゴリ機能　★
 - 検索機能
-- お問い合わせ機能（web hookを使用してslackに通知したい）
-- 過去記事月別
-- プロフィール
+- お問い合わせ機能　microCMSへPOSTリクエストで登録　★
+- お問い合わせ機能　バリデーション（react-hook-form, yup）　★
+- お問い合わせ機能　送信エラー分岐（）　★
+- お問い合わせ機能　テスト（Jestとかを使う？）
+- 過去記事月別一覧
+- カテゴリ一覧　
+- プロフィール　★
 - SNSシェア
 - 新規投稿記事にNewアイコン付与
 - meta、OGP
 - PWA
-- TypeScript化
+- TypeScript化（お問い合わせだけ一応構築済）
 - Photo Galleryページ構築（趣味の写真をUPしてみたい）
 
 

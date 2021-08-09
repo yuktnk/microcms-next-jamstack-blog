@@ -26,7 +26,7 @@ export default function Layout({ children, home }) {
       </Head>
       <Header />
       {/* <main className=" py-16 bg-lightBlue01 bg-opacity-10">{children}</main> */}
-      <Box component="main" bgcolor="primary.main" className="p-4 sm:py-12 sm:px-4 -mt-48">
+      <Box component="main" bgcolor="primary.main" className="p-4 -mt-48 sm:py-12 sm:px-4">
         {children}
       </Box>
       <Footer />

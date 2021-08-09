@@ -53,7 +53,7 @@ const ContactForm: NextPage = () => {
         }
       });
 
-      void router.push("/contact/success");
+      void router.push("/contact/thanks");
     } catch (err) {
       void router.push("/contact/error");
     }
@@ -129,6 +129,7 @@ const ContactForm: NextPage = () => {
             variant="contained"
             aria-label="送信"
             className="mx-auto block"
+            color="secondary"
           >
             Send<SendIcon className="w-4 ml-2"/>
           </Button>
