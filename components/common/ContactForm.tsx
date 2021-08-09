@@ -23,20 +23,34 @@ const ContactForm: NextPage = () => {
 
   const onSubmit = async (contact: Contact): Promise<void> => {
 
+    // try {
+    //   fetch("https://yuktnk-blog.microcms.io/api/v1/contacts", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json; charset=utf-8",
+    //       "X-WRITE-API-KEY": process.env.WRITE_API_KEY,
+    //     },
+    //     body: JSON.stringify(contact)
+    //   })
+    //   void router.push("/contact/success");
+    // } catch (err) {
+    //   void router.push("/contact/error");
+    // }
     try {
-      fetch("https://yuktnk-blog.microcms.io/api/v1/contacts", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          "X-WRITE-API-KEY": process.env.WRITE_API_KEY,
         },
-        body: JSON.stringify(contact)
-      })
+        body: JSON.stringify(contact),
+      }).then((res) => {
+        if (!res.ok) {
+          throw Error(`${res.status} ${res.statusText}`);
+        }
+      });
 
       void router.push("/contact/success");
-
     } catch (err) {
-
       void router.push("/contact/error");
     }
   }
