@@ -44,7 +44,7 @@ const ContactForm: NextPage = () => {
       body: JSON.stringify(contact),
     })
 
-    void router.push("/contact/success");
+    void router.push("/");
 
 
     // try {
