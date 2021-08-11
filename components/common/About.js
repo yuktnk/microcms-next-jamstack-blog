@@ -4,7 +4,7 @@ import { Heading02 } from "./index"
 
 const Contents = () => {
   return (
-    <div className="w-full sm:w-2/3 px-4 sm:pl-0 sm:pr-4 py-4 sm:py-0">
+    <div className="w-full sm:w-2/3 px-4 py-4 sm:pl-0 sm:pr-4 sm:py-0">
       <Card>
         <Heading02 title="プロフィール" />
         <div className="px-4 py-8 sm:p-8">

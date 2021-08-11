@@ -8,7 +8,7 @@ const Header = () => {
       {/* <p className="text-center text-sm ">説明文説明文説明文説明文説明文</p> */}
       <div className="pt-16 h-full bg-black bg-opacity-20">
         <Link href={`/`}>
-          <a className="block text-baseBlue text-center text-5xl pt-4">tanipu blog<span className="text-xs">（構築中）</span></span></a>
+          <a className="block text-baseBlue text-center text-5xl pt-4">tanipu blog<span className="text-xs">（構築中）</span></a>
         </Link>
         <nav className="flex justify-center py-8">
           <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
