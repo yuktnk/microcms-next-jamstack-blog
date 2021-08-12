@@ -163,9 +163,9 @@
       letter-spacing: 0.2px;
 
       & > code {
-        color: var(--color-pink);
-        background-color: var(--color-gray-light);
-        border: 1px solid var(--color-border);
+        color: #e47afa;
+        background-color: #20232a;
+        // border: 1px solid var(--color-border);
         border-radius: 3px;
         margin: 0 2px;
         padding: 2px 4px;
@@ -232,6 +232,13 @@
         padding: 8px 16px;
         border-radius: 3px;
       }
+    }
+
+    a {
+      color: #61dafb;
+      text-decoration: underline;
+      word-wrap: break-word;
+      word-break: break-all;
     }
   }
 }
