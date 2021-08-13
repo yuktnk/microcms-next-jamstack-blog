@@ -1,37 +1,48 @@
+import Head from "next/head";
 import Link from "next/link";
-import Layout from "../../components/layout";
+import Layout, { siteTitle } from "../../components/layout";
 import { client } from "../../libs/client";
 import styles from "../../styles/Article.module.scss";
 import Date from "../../components/date";
-import Card from "@material-ui/core/Card";
+import { Button, Card } from "@material-ui/core";
+import { Sidebar } from "../../components/common/index";
 import cheerio from 'cheerio';
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark-dimmed.css';
 
-export default function BlogId({ blogData, coloredBody }) {
+export default function BlogId({ blogData, categories, coloredBody }) {
 
   return (
     <Layout>
-      <div className="mx-auto max-w-7xl bg-materialBackground01">
-        <div className="pt-16">
-          <h1 className="text-4xl text-white text-center mb-4 ">{blogData.title}</h1>
-          <p className="text-white text-center mb-4">
-            <Date dateString={blogData.publishedAt} />
-          </p>
-          <p className="text-white text-center">{blogData.category && `${blogData.category.name}`}</p>
-        </div>
-        <Card className={styles.postWrapper}>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: coloredBody
-            }}
-            className={styles.post}
-          />
+      <Head>
+        <title>{blogData.title}｜{siteTitle}</title>
+      </Head>
+      <Card className="mx-auto max-w-7xl sm:flex block justify-between p-0 sm:p-2 md:p-4 lg:p-8 ">
+        <Card className="w-full sm:w-2/3 px-4 py-4 sm:pl-0 sm:pr-4 sm:py-0">
+          <div className="pt-16">
+            <h1 className="text-4xl text-white text-center mb-4 ">{blogData.title}</h1>
+            <p className="text-white text-center mb-4">
+              <Date dateString={blogData.publishedAt} />
+            </p>
+            <p className="text-white text-center">{blogData.category && `${blogData.category.name}`}</p>
+          </div>
+          <div className={styles.postWrapper}>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: coloredBody
+              }}
+              className={styles.post}
+            />
+          </div>
+          <Button
+              variant="contained"
+              className="my-12 mx-auto block"
+          >
+            <Link href="/"><a>topへ戻る</a></Link>
+          </Button>
         </Card>
-        <Link href="/">
-          <a>topへ戻る</a>
-        </Link>
-      </div>
+        <Sidebar categories={categories} />
+      </Card>
     </Layout>
   );
 }
@@ -46,6 +57,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
+  const categories = await client.get({ endpoint: "categories" });
 
   const $ = cheerio.load(data.body);
 
@@ -59,6 +71,7 @@ export const getStaticProps = async (context) => {
     props: {
       blogData: data,
       coloredBody: $.html(),
+      categories: categories.contents,
     },
   };
 };
