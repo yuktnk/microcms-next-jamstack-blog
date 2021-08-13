@@ -38,7 +38,6 @@ export default function Layout({ children, home }) {
       </Head>
 
       <Header />
-      {/* <main className=" py-16 bg-lightBlue01 bg-opacity-10">{children}</main> */}
       <Box component="main" bgcolor="primary.main" className="p-4 -mt-48 sm:pt-12 sm:pb-32 sm:px-4">
         {children}
       </Box>
