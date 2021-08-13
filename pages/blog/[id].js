@@ -18,9 +18,9 @@ export default function BlogId({ blogData, categories, coloredBody }) {
         <title>{blogData.title}｜{siteTitle}</title>
       </Head>
       <Card className="mx-auto max-w-7xl sm:flex block justify-between p-0 sm:p-2 md:p-4 lg:p-8 ">
-        <Card className="w-full sm:w-2/3 px-4 py-4 sm:pl-0 sm:pr-4 sm:py-0">
-          <div className="pt-16">
-            <h1 className="text-4xl text-white text-center mb-4 ">{blogData.title}</h1>
+        <Card className="w-full sm:w-2/3">
+          <div className="p-4">
+            <h1 className="text-xl sm:text-4xl text-white text-center mb-4 ">{blogData.title}</h1>
             <p className="text-white text-center mb-4">
               <Date dateString={blogData.publishedAt} />
             </p>
