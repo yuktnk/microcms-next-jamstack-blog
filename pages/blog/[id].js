@@ -5,7 +5,14 @@ import styles from "../../styles/Article.module.scss";
 import Date from "../../components/date";
 import Card from "@material-ui/core/Card";
 
-export default function BlogId({ blog }) {
+import cheerio from 'cheerio';
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github-dark-dimmed.css';
+
+
+
+export default function BlogId({ blog, highlightedBody }) {
+
   return (
     <Layout>
       <div className="mx-auto max-w-7xl bg-materialBackground01">
@@ -19,7 +26,8 @@ export default function BlogId({ blog }) {
         <Card className={styles.postWrapper}>
           <div
             dangerouslySetInnerHTML={{
-              __html: `${blog.body}`,
+              // __html: `${$.html()}`
+              __html: highlightedBody
             }}
             className={styles.post}
           />
@@ -32,7 +40,7 @@ export default function BlogId({ blog }) {
   );
 }
 
-// 静的生成のためのパスを指定します
+// 静的生成のためのパスを指定
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
@@ -40,13 +48,23 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
+// データをテンプレートに受け渡す部分の処理を記述
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
+
+  const $ = cheerio.load(data.body);
+
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass('hljs');
+  });
+
   return {
     props: {
       blog: data,
+      highlightedBody: $.html(),
     },
   };
 };
