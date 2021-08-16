@@ -26,10 +26,6 @@ module.exports = {
         javascript: "#f1e05a",
         react: "#61DAFB",
         gadget: "#54727A",
-
-        // backgroundImage: theme => ({
-        //   'fv-img': "url('/images/water.jpg')",
-        // })
       },
     },
   },
