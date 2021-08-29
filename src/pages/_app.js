@@ -1,5 +1,5 @@
-import "../styles/recet.css";
-import "../styles/globals.css";
+import "../../styles/recet.css";
+import "../../styles/globals.css";
 import "tailwindcss/tailwind.css";
 
 function MyApp({ Component, pageProps, router }) {
