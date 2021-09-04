@@ -26,9 +26,11 @@ module.exports = {
         per30: "30%",
 
         // category colors
+        others: "#303030",
         javascript: "#f1e05a",
-        react: "#61DAFB",
+        react_nextjs: "#61DAFB",
         gadget: "#54727A",
+        typescript: "#2b7489",
       },
     },
   },

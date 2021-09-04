@@ -6,6 +6,21 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 
 const Article = (props) => {
+
+  let categoryName = "";
+  if (props.article.category.id === "react_nextjs") {
+    categoryName = "bg-react_nextjs";
+  } else if (props.article.category.id === "typescript") {
+    categoryName = "bg-typescript";
+  } else if (props.article.category.id === "others") {
+    categoryName = "bg-others";
+  } else if (props.article.category.id === "javascript") {
+    categoryName = "bg-javascript";
+  } else if (props.article.category.id === "gadget") {
+    categoryName = "bg-gadget";
+  }
+
+
   return (
     <li
       key={props.article.id}
@@ -31,7 +46,7 @@ const Article = (props) => {
                     <Date dateString={props.article.publishedAt} />
                   </p>
                   <p
-                    className={"text-white px-2 py-1 text-xs " + `bg-${props.article.category.id}`}
+                    className={"text-white px-2 py-1 text-xs " + `${categoryName}`}
                   >
                     {props.article.category && `${props.article.category.name}`}
                   </p>
