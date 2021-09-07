@@ -8,7 +8,6 @@ type ContentsPropsType = {
 type ArticleType = {
   id: string,
   title: string,
-  totalCount: number
 }
 
 const Contents = (props: ContentsPropsType) => {
