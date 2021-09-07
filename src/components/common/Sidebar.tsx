@@ -3,7 +3,16 @@ import { Heading03, SNS } from "./index";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 
-const Sidebar = (props) => {
+type SidebarPropsType ={ categories: [] }
+
+
+type categoryObjectType = {
+  id: string,
+  name: string,
+}
+
+const Sidebar = (props: SidebarPropsType) => {
+
   let categories = props.categories;
 
   return (
@@ -38,7 +47,7 @@ const Sidebar = (props) => {
       <Card className="mb-16">
         <Heading03 title="Category(未構築)" />
         <ul className="p-2">
-          {categories.map((category) => (
+          {categories.map((category: categoryObjectType) => (
             <li key={category.id} className="">
               <Button>{category.name}</Button>
             </li>
