@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Date from "../../components/date";
+import Date from "../date";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import ScheduleIcon from "@material-ui/icons/Schedule";

@@ -5,7 +5,6 @@ import Card from "@material-ui/core/Card";
 
 type SidebarPropsType ={ categories: [] }
 
-
 type categoryObjectType = {
   id: string,
   name: string,
@@ -48,7 +47,7 @@ const Sidebar = (props: SidebarPropsType) => {
         <Heading03 title="Category(未構築)" />
         <ul className="p-2">
           {categories.map((category: categoryObjectType) => (
-            <li key={category.id} className="">
+            <li key={category.id} >
               <Button>{category.name}</Button>
             </li>
           ))}
