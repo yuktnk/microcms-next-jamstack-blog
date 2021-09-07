@@ -7,9 +7,7 @@ import Card from "@material-ui/core/Card";
 // import { useRouter } from 'next/router';
 
 
-export default function Home({ articles, categories, totalCount, id }) {
-
-  console.log(id);
+export default function Home({ articles, categories, totalCount }) {
   // const router = useRouter();
   // console.log(router.pathname);
   // console.log(router.query.categoryName);
@@ -50,8 +48,6 @@ export const getStaticProps = async ( params ) => {
     throw Error('pagesの、ディレクトリ構造かファイル名が間違っています。')
   }
 
-  const id = params.id;
-
   const categories = await client.get({ endpoint: "categories" });
 
   const articlesData = await client.get({
@@ -64,7 +60,6 @@ export const getStaticProps = async ( params ) => {
 
   return {
     props: {
-      id: id,
       articles: articlesData.contents,
       categories: categories.contents,
       totalCount: articlesData.totalCount,
