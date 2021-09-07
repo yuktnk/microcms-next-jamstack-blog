@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { Pagination } from "@material-ui/lab";
 import React, { useCallback } from "react";
 
-const DynamicPagination = ({ totalCount }) => {
+const DynamicPagination = ( totalCount: number ) => {
   const PER_PAGE = 2;
   const router = useRouter();
 
