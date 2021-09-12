@@ -6,9 +6,9 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "allowJs": true, // ← js ファイルを扱うかどうか
     "skipLibCheck": true,
-    "strict": true,
+    "strict": true, // ← 型チェックなどを厳密に行う
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
