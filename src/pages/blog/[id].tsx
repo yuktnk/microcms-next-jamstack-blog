@@ -1,3 +1,5 @@
+import { NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+
 import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../../components/layout";
@@ -10,7 +12,23 @@ import cheerio from 'cheerio';
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark-dimmed.css';
 
-export default function BlogId({ blogData, categories, coloredBody }) {
+type blogDataType = {
+  title: string,
+  publishedAt: string,
+  category: {
+    name:string
+  }
+}
+
+type PropsType = {
+  blogData: blogDataType,
+  categories: [],
+  coloredBody: string,
+}
+
+const BlogId: NextPage<PropsType> = (props: PropsType) => {
+
+  const { blogData, categories, coloredBody } = props;
 
   return (
     <Layout>
@@ -47,17 +65,33 @@ export default function BlogId({ blogData, categories, coloredBody }) {
   );
 }
 
-export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "blog" });
+export const getStaticPaths: GetStaticPaths = async () => {
+  type dataType = {
+    contents: [
+      {
+        id: number
+      }
+    ]
+  }
+
+  const data: dataType = await client.get({ endpoint: "blog" });
 
   const paths = data.contents.map((content) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
+
+  type categoriesType = {
+    contents: []
+  }
+  type dataType = {
+    body: string
+  }
+
   const id = context.params.id;
-  const data = await client.get({ endpoint: "blog", contentId: id });
-  const categories = await client.get({ endpoint: "categories" });
+  const data: dataType = await client.get({ endpoint: "blog", contentId: id });
+  const categories: categoriesType = await client.get({ endpoint: "categories" });
 
   const $ = cheerio.load(data.body);
 
@@ -72,6 +106,10 @@ export const getStaticProps = async (context) => {
       blogData: data,
       coloredBody: $.html(),
       categories: categories.contents,
+      categoriestest: categories,
     },
   };
 };
+
+
+export default BlogId;

@@ -7,8 +7,6 @@ import Card from "@material-ui/core/Card";
 
 export default function Home({ articles, categories, totalCount }) {
 
-  console.log(articles[0].category.id)
-
   return (
     <Layout home>
       <Head>

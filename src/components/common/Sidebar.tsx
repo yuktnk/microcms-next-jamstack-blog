@@ -3,7 +3,7 @@ import { Heading03, SNS } from "./index";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 
-type SidebarPropsType ={ categories: [] }
+type SidebarPropsType = { categories: [] }
 
 type categoryObjectType = {
   id: string,
