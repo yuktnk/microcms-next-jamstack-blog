@@ -5,7 +5,8 @@ import { useForm, Controller } from "react-hook-form";
 import { NextPage } from "next";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers";
-import { Contact, Heading02 } from "../../components/common/index"
+import { Heading02 } from "../../components/common/index"
+import { Contact } from "../../models/index"
 import { useRouter } from "next/router";
 
 
