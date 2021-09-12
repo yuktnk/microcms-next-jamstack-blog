@@ -1,4 +1,5 @@
 import { NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import { ParsedUrlQuery } from 'node:querystring'
 
 import Head from "next/head";
 import Link from "next/link";
@@ -11,6 +12,7 @@ import { Sidebar } from "../../components/common/index";
 import cheerio from 'cheerio';
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark-dimmed.css';
+
 
 type blogDataType = {
   title: string,
@@ -25,6 +27,12 @@ type PropsType = {
   categories: [],
   coloredBody: string,
 }
+
+//  Contextの型を定義し、ParsedUrlQueryをextendsする
+interface Context extends ParsedUrlQuery {
+  id?: string
+}
+
 
 const BlogId: NextPage<PropsType> = (props: PropsType) => {
 
@@ -73,24 +81,33 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
     ]
   }
-
   const data: dataType = await client.get({ endpoint: "blog" });
 
   const paths = data.contents.map((content) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
+
+
+export const getStaticProps = async ( context: any ) => {
 
   type categoriesType = {
-    contents: []
-  }
-  type dataType = {
-    body: string
+    contents: Object[]
   }
 
-  const id = context.params.id;
-  const data: dataType = await client.get({ endpoint: "blog", contentId: id });
+  type BlogListResponse = {
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    revisedAt: string;
+    title?: string;
+    body: string;
+  }
+
+  const id = context.params?.id;
+
+  const data: BlogListResponse = await client.get({ endpoint: "blog", contentId: id });
   const categories: categoriesType = await client.get({ endpoint: "categories" });
 
   const $ = cheerio.load(data.body);
@@ -106,7 +123,6 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
       blogData: data,
       coloredBody: $.html(),
       categories: categories.contents,
-      categoriestest: categories,
     },
   };
 };
