@@ -5,7 +5,7 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 
-type articleType = {
+type ArticleType = {
   id: number;
   title: string;
   thumbnail: {
@@ -18,7 +18,7 @@ type articleType = {
   publishedAt: string;
 };
 
-const Article = ({ article }: { article: articleType }) => {
+const Article = ({ article }: { article: ArticleType }) => {
   let categoryName: string = "";
 
   switch (article.category.id) {
