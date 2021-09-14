@@ -2,9 +2,7 @@ import { useRouter } from "next/router";
 import { Pagination } from "@material-ui/lab";
 import React, { useCallback } from "react";
 
-type DynamicPaginationPropsType = { totalCount: number}
-
-const DynamicPagination = ( props: DynamicPaginationPropsType ) => {
+const DynamicPagination = ({ totalCount }: { totalCount: number }) => {
   const PER_PAGE = 2;
   const router = useRouter();
 
@@ -20,7 +18,7 @@ const DynamicPagination = ( props: DynamicPaginationPropsType ) => {
   return (
     <div className="flex justify-center">
       <Pagination
-        count={Math.ceil(props.totalCount / PER_PAGE)}
+        count={Math.ceil(totalCount / PER_PAGE)}
         variant="outlined"
         shape="rounded"
         color="secondary"

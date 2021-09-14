@@ -1,19 +1,11 @@
 import { Article, DynamicPagination } from "./index";
 
-type ContentsPropsType = {
-  articles: [],
-  totalCount: number
-}
-
 type ArticleType = {
-  id: string,
-  title: string,
-}
+  id: string;
+  title: string;
+};
 
-const Contents = (props: ContentsPropsType) => {
-
-  let articles = props.articles;
-
+const Contents = ({ articles, totalCount }: { articles: []; totalCount: number }) => {
   return (
     <div className="w-full sm:w-2/3 px-4 sm:pl-0 sm:pr-4 py-4 sm:py-0">
       <ul className="pb-4">
@@ -21,7 +13,7 @@ const Contents = (props: ContentsPropsType) => {
           <Article key={index} article={article} />
         ))}
       </ul>
-      <DynamicPagination totalCount={props.totalCount} />
+      <DynamicPagination totalCount={totalCount} />
     </div>
   );
 };

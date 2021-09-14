@@ -3,17 +3,12 @@ import { Heading03, SNS } from "./index";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 
-type SidebarPropsType = { categories: [] }
-
 type categoryObjectType = {
-  id: string,
-  name: string,
-}
+  id: string;
+  name: string;
+};
 
-const Sidebar = (props: SidebarPropsType) => {
-
-  let categories = props.categories;
-
+const Sidebar = ({ categories }: { categories: [] }) => {
   return (
     <aside className="sm:w-1/3 px-4 sm:pl-4 sm:pr-0 mt-8 sm:mt-0 py-4 sm:py-0">
       <Card className="mb-16">
@@ -24,10 +19,10 @@ const Sidebar = (props: SidebarPropsType) => {
           <p className="pt-8 pb-4 font-bold text-center text-xl">tanipu</p>
           <p className="text-sm sm:text-base text-center mb-4">
             都内受託開発企業に在籍中
-            <br/>
-            なんちゃってフロントエンドエンジニア。
-            <br/>
-            <br/>
+            <br />
+            フロントエンドエンジニア。
+            <br />
+            <br />
             日々の学習をアウトプットします。
           </p>
           <SNS />
@@ -47,7 +42,7 @@ const Sidebar = (props: SidebarPropsType) => {
         <Heading03 title="Category(未構築)" />
         <ul className="p-2">
           {categories.map((category: categoryObjectType) => (
-            <li key={category.id} >
+            <li key={category.id}>
               <Button>{category.name}</Button>
             </li>
           ))}
