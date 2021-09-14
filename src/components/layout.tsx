@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { NextPage } from "next";
 import Head from "next/head";
 import { Header, Footer } from "./common/index";
 import { ThemeProvider } from "@material-ui/styles";
@@ -9,17 +9,11 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 // meta
 export const siteTitle = "tanipu blog";
 export const siteURL = "https://www.tanipu-blog.com/";
-export const metaDescription = "なんちゃってフロントエンドエンジニアが学習していることについてアウトプットするブログです。";
+export const metaDescription =
+  "なんちゃってフロントエンドエンジニアが学習していることについてアウトプットするブログです。";
 export const metaKeywords = "フロントエンド エンジニア Next.js React microCMS tanipu";
 
-type PropsType = {
-  children: React.ReactNode,
-  home?: boolean,
-}
-
-const Layout: NextPage<PropsType> = ( props: PropsType ) => {
-  const{ children , home } = props;
-
+const Layout = ({ children, home }: { children: React.ReactNode; home?: boolean }) => {
   return (
     <ThemeProvider theme={MyTheme}>
       <CssBaseline />
@@ -51,6 +45,6 @@ const Layout: NextPage<PropsType> = ( props: PropsType ) => {
       <Footer />
     </ThemeProvider>
   );
-}
+};
 
-export default Layout
+export default Layout;
