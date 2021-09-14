@@ -1,4 +1,4 @@
-import { GA_TRACKING_ID, pageview } from "lib/gtag";
+import { GA_TRACKING_ID, pageview } from "../libs/gtag";
 import "../styles/recet.css";
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
