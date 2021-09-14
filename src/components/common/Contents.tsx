@@ -1,8 +1,16 @@
 import { Article, DynamicPagination } from "./index";
 
 type ArticleType = {
-  id: string;
+  id: number;
   title: string;
+  thumbnail: {
+    url: string;
+  };
+  category: {
+    id: string;
+    name: string;
+  };
+  publishedAt: string;
 };
 
 const Contents = ({ articles, totalCount }: { articles: []; totalCount: number }) => {
