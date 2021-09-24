@@ -120,6 +120,9 @@
         border-radius: 5px;
       }
     }
+    & > 　iframe {
+      max-width: 100%;
+    }
   }
 }
 
@@ -242,6 +245,9 @@
       text-decoration: underline;
       word-wrap: break-word;
       word-break: break-all;
+    }
+    & > 　iframe {
+      max-width: 100%;
     }
   }
 }
