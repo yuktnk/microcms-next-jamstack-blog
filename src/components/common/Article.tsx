@@ -25,7 +25,7 @@ const Article = ({ article }: { article: ArticleType }) => {
     case "react_nextjs":
       categoryName = "bg-react_nextjs";
       break;
-    case "bg-typescript":
+    case "typescript":
       categoryName = "bg-typescript";
       break;
     case "others":
