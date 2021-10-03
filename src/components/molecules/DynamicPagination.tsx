@@ -3,7 +3,7 @@ import { Pagination } from "@material-ui/lab";
 import React, { useCallback } from "react";
 
 const DynamicPagination = ({ totalCount }: { totalCount: number }) => {
-  const PER_PAGE = 2;
+  const PER_PAGE = 3;
   const router = useRouter();
 
   const pageNumber = router.query.id ? Number.parseInt(String(router.query.id), 10) : 1;

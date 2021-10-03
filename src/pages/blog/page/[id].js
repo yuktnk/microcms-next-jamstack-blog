@@ -4,7 +4,7 @@ import Layout, { siteTitle } from "../../../components/layout";
 import Card from "@material-ui/core/Card";
 import { Contents, Sidebar } from "../../../components/organisms/index";
 
-const PER_PAGE = 2;
+const PER_PAGE = 3;
 
 const BlogPageId = ({ articles, totalCount, categories }) => {
   return (
