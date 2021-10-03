@@ -22,7 +22,7 @@ export default function Home({ articles, categories, totalCount }) {
 export const getStaticProps = async () => {
   const articlesData = await client.get({
     endpoint: "blog",
-    queries: { limit: 2 },
+    queries: { limit: 3 },
   });
   const categories = await client.get({ endpoint: "categories" });
   return {
