@@ -1,5 +1,5 @@
-import { NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
-import { ParsedUrlQuery } from 'node:querystring'
+import { NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { ParsedUrlQuery } from "node:querystring";
 
 import Head from "next/head";
 import Link from "next/link";
@@ -8,40 +8,39 @@ import { client } from "../../libs/client";
 import styles from "../../styles/Article.module.scss";
 import Date from "../../components/date";
 import { Button, Card } from "@material-ui/core";
-import { Sidebar } from "../../components/common/index";
-import cheerio from 'cheerio';
-import hljs from 'highlight.js'
-import 'highlight.js/styles/github-dark-dimmed.css';
-
+import { Sidebar } from "../../components/organisms/index";
+import cheerio from "cheerio";
+import hljs from "highlight.js";
+import "highlight.js/styles/github-dark-dimmed.css";
 
 type blogDataType = {
-  title: string,
-  publishedAt: string,
+  title: string;
+  publishedAt: string;
   category: {
-    name:string
-  }
-}
+    name: string;
+  };
+};
 
 type PropsType = {
-  blogData: blogDataType,
-  categories: [],
-  coloredBody: string,
-}
+  blogData: blogDataType;
+  categories: [];
+  coloredBody: string;
+};
 
 //  Contextの型を定義し、ParsedUrlQueryをextendsする
 interface Context extends ParsedUrlQuery {
-  id?: string
+  id?: string;
 }
 
-
 const BlogId: NextPage<PropsType> = (props: PropsType) => {
-
   const { blogData, categories, coloredBody } = props;
 
   return (
     <Layout>
       <Head>
-        <title>{blogData.title}｜{siteTitle}</title>
+        <title>
+          {blogData.title}｜{siteTitle}
+        </title>
       </Head>
       <Card className="mx-auto max-w-7xl sm:flex block justify-between p-0 sm:p-2 md:p-4 lg:p-8 ">
         <Card className="w-full sm:w-2/3">
@@ -50,50 +49,48 @@ const BlogId: NextPage<PropsType> = (props: PropsType) => {
             <p className="text-white text-center mb-4">
               <Date dateString={blogData.publishedAt} />
             </p>
-            <p className="text-white text-center">{blogData.category && `${blogData.category.name}`}</p>
+            <p className="text-white text-center">
+              {blogData.category && `${blogData.category.name}`}
+            </p>
           </div>
           <div className={styles.postWrapper}>
             <div
               dangerouslySetInnerHTML={{
-                __html: coloredBody
+                __html: coloredBody,
               }}
               className={styles.post}
             />
           </div>
-          <Button
-              variant="contained"
-              className="my-12 mx-auto block"
-          >
-            <Link href="/"><a>topへ戻る</a></Link>
+          <Button variant="contained" className="my-12 mx-auto block">
+            <Link href="/">
+              <a>topへ戻る</a>
+            </Link>
           </Button>
         </Card>
         <Sidebar categories={categories} />
       </Card>
     </Layout>
   );
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   type dataType = {
     contents: [
       {
-        id: number
+        id: number;
       }
-    ]
-  }
+    ];
+  };
   const data: dataType = await client.get({ endpoint: "blog" });
 
   const paths = data.contents.map((content) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
-
-
-export const getStaticProps = async ( context: any ) => {
-
+export const getStaticProps = async (context: any) => {
   type categoriesType = {
-    contents: Object[]
-  }
+    contents: Object[];
+  };
 
   type BlogListResponse = {
     id: string;
@@ -103,7 +100,7 @@ export const getStaticProps = async ( context: any ) => {
     revisedAt: string;
     title?: string;
     body: string;
-  }
+  };
 
   const id = context.params?.id;
 
@@ -112,10 +109,10 @@ export const getStaticProps = async ( context: any ) => {
 
   const $ = cheerio.load(data.body);
 
-  $('pre code').each((_, elm) => {
+  $("pre code").each((_, elm) => {
     const result = hljs.highlightAuto($(elm).text());
     $(elm).html(result.value);
-    $(elm).addClass('hljs');
+    $(elm).addClass("hljs");
   });
 
   return {
@@ -126,6 +123,5 @@ export const getStaticProps = async ( context: any ) => {
     },
   };
 };
-
 
 export default BlogId;
