@@ -1,4 +1,5 @@
-import { Article, DynamicPagination } from "./index";
+import { Article } from "./index";
+import { DynamicPagination } from "../molecules/index";
 
 type ArticleType = {
   id: number;

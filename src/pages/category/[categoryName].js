@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../../components/layout";
 import { client } from "../../libs/client";
-import { Contents, Sidebar } from "../../components/common/index";
+import { Contents } from "../../components/organisms/index";
+import { Sidebar } from "../../components/common/index";
 import Card from "@material-ui/core/Card";
 
 // import { useRouter } from 'next/router';
-
 
 export default function Home({ articles, categories, totalCount }) {
   // const router = useRouter();
@@ -42,10 +42,9 @@ export const getStaticPaths = async () => {
 };
 
 // データをテンプレートに受け渡す部分の処理
-export const getStaticProps = async ( params ) => {
-
+export const getStaticProps = async (params) => {
   if (params === undefined) {
-    throw Error('pagesの、ディレクトリ構造かファイル名が間違っています。')
+    throw Error("pagesの、ディレクトリ構造かファイル名が間違っています。");
   }
 
   const categories = await client.get({ endpoint: "categories" });
@@ -54,7 +53,7 @@ export const getStaticProps = async ( params ) => {
     endpoint: "blog",
     queries: {
       limit: 2,
-      filters: `category[equals]${params.id}`
+      filters: `category[equals]${params.id}`,
     },
   });
 

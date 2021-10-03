@@ -1,12 +1,11 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { client } from "../libs/client";
-import { Contents, Sidebar } from "../components/common/index";
+import { Contents } from "../components/organisms/index";
+import { Sidebar } from "../components/common/index";
 import Card from "@material-ui/core/Card";
 
-
 export default function Home({ articles, categories, totalCount }) {
-
   return (
     <Layout home>
       <Head>
