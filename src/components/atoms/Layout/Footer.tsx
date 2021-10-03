@@ -1,4 +1,4 @@
-import { SNS } from "./index"
+import { SNS } from "../../common/index";
 const Footer = () => {
   return (
     <footer className="p-8 bg-grayBlue02">

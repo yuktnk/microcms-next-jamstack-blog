@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import { Header, Footer } from "./common/index";
+import { Header, Footer } from "./atoms/";
 import { ThemeProvider } from "@material-ui/styles";
 import { MyTheme } from "./theme";
 import Box from "@material-ui/core/Box";
