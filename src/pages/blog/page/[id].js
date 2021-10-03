@@ -44,7 +44,7 @@ export const getStaticPaths = async () => {
 // データを取得
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const offsetNum = (id - 1) * 2;
+  const offsetNum = (id - 1) * 3;
 
   const articlesData = await client.get({
     endpoint: "blog",

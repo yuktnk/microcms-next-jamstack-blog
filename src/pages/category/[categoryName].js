@@ -51,7 +51,7 @@ export const getStaticProps = async (params) => {
   const articlesData = await client.get({
     endpoint: "blog",
     queries: {
-      limit: 2,
+      limit: 3,
       filters: `category[equals]${params.id}`,
     },
   });
