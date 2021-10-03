@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { client } from "../../../libs/client";
 import Layout, { siteTitle } from "../../../components/layout";
-import { ContactError, Sidebar } from "../../../components/common/index";
+import { ContactError } from "../../../components/organisms/index";
+import { Sidebar } from "../../../components/common/index";
 import Card from "@material-ui/core/Card";
 
 export default function AboutIndex({ categories }) {
