@@ -1,15 +1,13 @@
 import React from "react";
 import { Button, Card, TextField } from "@material-ui/core";
-import SendIcon from '@material-ui/icons/Send';
+import SendIcon from "@material-ui/icons/Send";
 import { useForm, Controller } from "react-hook-form";
 import { NextPage } from "next";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers";
-import { Heading02 } from "../../components/common/index"
-import { Contact } from "../../models/index"
+import { Heading02 } from "../atoms/index";
+import { Contact } from "../../models/index";
 import { useRouter } from "next/router";
-
-
 
 const ContactForm: NextPage = () => {
   const router = useRouter();
@@ -25,7 +23,6 @@ const ContactForm: NextPage = () => {
   });
 
   const onSubmit = async (contact: Contact): Promise<void> => {
-
     // try {
     //   fetch("https://yuktnk-blog.microcms.io/api/v1/contacts", {
     //     method: "POST",
@@ -39,7 +36,6 @@ const ContactForm: NextPage = () => {
     // } catch (err) {
     //   void router.push("/contact/error");
     // }
-
 
     try {
       await fetch(baseUrl + "/api/contact", {
@@ -58,7 +54,7 @@ const ContactForm: NextPage = () => {
     } catch (err) {
       void router.push("/contact/error");
     }
-  }
+  };
 
   const { control, handleSubmit, errors } = useForm<Contact>({
     mode: "onBlur",
@@ -132,7 +128,8 @@ const ContactForm: NextPage = () => {
             className="mx-auto block"
             color="secondary"
           >
-            Send<SendIcon className="w-4 ml-2"/>
+            Send
+            <SendIcon className="w-4 ml-2" />
           </Button>
         </form>
       </Card>

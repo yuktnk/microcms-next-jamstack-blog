@@ -1,9 +1,8 @@
 import Link from "next/link";
 
 import Card from "@material-ui/core/Card";
-import { Heading02 } from "./index"
+import { Heading02 } from "../atoms/index";
 import Button from "@material-ui/core/Button";
-
 
 const ContactError = () => {
   return (
@@ -14,9 +13,7 @@ const ContactError = () => {
           <p className="text-base mb-8">
             この度はお問い合わせメールをお送りいただきありがとうございます。
           </p>
-          <p className="text-base mb-8">
-            誠に申し訳ございません。
-          </p>
+          <p className="text-base mb-8">誠に申し訳ございません。</p>
           <p className="text-base mb-8">
             なんらかのシステムエラーが発生している可能性がございます。
           </p>
@@ -26,11 +23,7 @@ const ContactError = () => {
           <p className="text-base">
             <a href="mailto:yuki0wl@gmail.com">yuki0wl@gmail.com</a>
           </p>
-          <Button
-            variant="contained"
-            className="mt-16 mb-8 mx-auto block"
-            color="secondary"
-          >
+          <Button variant="contained" className="mt-16 mb-8 mx-auto block" color="secondary">
             <Link href={`/`}>
               <a className="block px-8">Top</a>
             </Link>
@@ -40,7 +33,5 @@ const ContactError = () => {
     </div>
   );
 };
-
-
 
 export default ContactError;
