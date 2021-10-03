@@ -7,4 +7,4 @@ export { default as Contents } from "./Contents";
 export { default as DynamicPagination } from "./DynamicPagination";
 
 export { default as Sidebar } from "./Sidebar";
-export { default as SNS } from "./SNS";
+
