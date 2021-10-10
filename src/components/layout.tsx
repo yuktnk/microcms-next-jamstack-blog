@@ -35,6 +35,7 @@ const Layout = ({ children, home }: { children: React.ReactNode; home?: boolean 
         <meta name="og:title" content={siteTitle} />
         <style data-href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"></style>
         <style data-href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"></style>
+        <style data-href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"></style>
         <style data-href="https://fonts.googleapis.com/icon?family=Material+Icons"></style>
       </Head>
 
