@@ -1,39 +1,39 @@
-import { NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { ParsedUrlQuery } from "node:querystring";
+import { NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
+import { ParsedUrlQuery } from 'node:querystring'
 
-import Head from "next/head";
-import Link from "next/link";
-import Layout, { siteTitle } from "../../components/layout";
-import { client } from "../../libs/client";
-import styles from "../../styles/Article.module.scss";
-import Date from "../../components/date";
-import { Button, Card } from "@material-ui/core";
-import { Sidebar } from "../../components/organisms/index";
-import cheerio from "cheerio";
-import hljs from "highlight.js";
-import "highlight.js/styles/github-dark-dimmed.css";
+import Head from 'next/head'
+import Link from 'next/link'
+import Layout, { siteTitle } from '../../components/layout'
+import { client } from '../../libs/client'
+import styles from '../../styles/Article.module.scss'
+import Date from '../../components/date'
+import { Button, Card } from '@material-ui/core'
+import { Sidebar } from '../../components/organisms/index'
+import cheerio from 'cheerio'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github-dark-dimmed.css'
 
 type blogDataType = {
-  title: string;
-  publishedAt: string;
+  title: string
+  publishedAt: string
   category: {
-    name: string;
-  };
-};
+    name: string
+  }
+}
 
 type PropsType = {
-  blogData: blogDataType;
-  categories: [];
-  coloredBody: string;
-};
+  blogData: blogDataType
+  categories: []
+  coloredBody: string
+}
 
 //  Contextの型を定義し、ParsedUrlQueryをextendsする
 interface Context extends ParsedUrlQuery {
-  id?: string;
+  id?: string
 }
 
 const BlogId: NextPage<PropsType> = (props: PropsType) => {
-  const { blogData, categories, coloredBody } = props;
+  const { blogData, categories, coloredBody } = props
 
   return (
     <Layout>
@@ -49,9 +49,7 @@ const BlogId: NextPage<PropsType> = (props: PropsType) => {
             <p className="text-white text-center mb-4">
               <Date dateString={blogData.publishedAt} />
             </p>
-            <p className="text-white text-center">
-              {blogData.category && `${blogData.category.name}`}
-            </p>
+            <p className="text-white text-center">{blogData.category && `${blogData.category.name}`}</p>
           </div>
           <div className={styles.postWrapper}>
             <div
@@ -70,50 +68,50 @@ const BlogId: NextPage<PropsType> = (props: PropsType) => {
         <Sidebar categories={categories} />
       </Card>
     </Layout>
-  );
-};
+  )
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   type dataType = {
     contents: [
       {
-        id: number;
+        id: number
       }
-    ];
-  };
-  const data: dataType = await client.get({ endpoint: "blog" });
+    ]
+  }
+  const data: dataType = await client.get({ endpoint: 'blog' })
 
-  const paths = data.contents.map((content) => `/blog/${content.id}`);
-  return { paths, fallback: false };
-};
+  const paths = data.contents.map((content) => `/blog/${content.id}`)
+  return { paths, fallback: false }
+}
 
 export const getStaticProps = async (context: any) => {
   type categoriesType = {
-    contents: Object[];
-  };
+    contents: Object[]
+  }
 
   type BlogListResponse = {
-    id: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    revisedAt: string;
-    title?: string;
-    body: string;
-  };
+    id: string
+    createdAt: string
+    updatedAt: string
+    publishedAt: string
+    revisedAt: string
+    title?: string
+    body: string
+  }
 
-  const id = context.params?.id;
+  const id = context.params?.id
 
-  const data: BlogListResponse = await client.get({ endpoint: "blog", contentId: id });
-  const categories: categoriesType = await client.get({ endpoint: "categories" });
+  const data: BlogListResponse = await client.get({ endpoint: 'blog', contentId: id })
+  const categories: categoriesType = await client.get({ endpoint: 'categories' })
 
-  const $ = cheerio.load(data.body);
+  const $ = cheerio.load(data.body)
 
-  $("pre code").each((_, elm) => {
-    const result = hljs.highlightAuto($(elm).text());
-    $(elm).html(result.value);
-    $(elm).addClass("hljs");
-  });
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text())
+    $(elm).html(result.value)
+    $(elm).addClass('hljs')
+  })
 
   return {
     props: {
@@ -121,7 +119,7 @@ export const getStaticProps = async (context: any) => {
       coloredBody: $.html(),
       categories: categories.contents,
     },
-  };
-};
+  }
+}
 
-export default BlogId;
+export default BlogId

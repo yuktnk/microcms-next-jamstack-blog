@@ -1,4 +1,4 @@
-import { SNS } from "../../molecules/index";
+import { SNS } from '../../molecules/index'
 
 const Footer = () => {
   return (
@@ -6,7 +6,7 @@ const Footer = () => {
       <SNS />
       <p className="text-center text-xs mt-4">© 2021 tanipu</p>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

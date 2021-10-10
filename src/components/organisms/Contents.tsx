@@ -1,18 +1,18 @@
-import { Article } from "./index";
-import { DynamicPagination } from "../molecules/index";
+import { Article } from './index'
+import { DynamicPagination } from '../molecules/index'
 
 type ArticleType = {
-  id: number;
-  title: string;
+  id: number
+  title: string
   thumbnail: {
-    url: string;
-  };
+    url: string
+  }
   category: {
-    id: string;
-    name: string;
-  };
-  publishedAt: string;
-};
+    id: string
+    name: string
+  }
+  publishedAt: string
+}
 
 const Contents = ({ articles, totalCount }: { articles: []; totalCount: number }) => {
   return (
@@ -24,7 +24,7 @@ const Contents = ({ articles, totalCount }: { articles: []; totalCount: number }
       </ul>
       <DynamicPagination totalCount={totalCount} />
     </div>
-  );
-};
+  )
+}
 
-export default Contents;
+export default Contents

@@ -1,19 +1,19 @@
-import { useRouter } from "next/router";
-import { Pagination } from "@material-ui/lab";
-import React, { useCallback } from "react";
+import { useRouter } from 'next/router'
+import { Pagination } from '@material-ui/lab'
+import React, { useCallback } from 'react'
 
 const DynamicPagination = ({ totalCount }: { totalCount: number }) => {
-  const PER_PAGE = 3;
-  const router = useRouter();
+  const PER_PAGE = 3
+  const router = useRouter()
 
-  const pageNumber = router.query.id ? Number.parseInt(String(router.query.id), 10) : 1;
+  const pageNumber = router.query.id ? Number.parseInt(String(router.query.id), 10) : 1
 
   const handleChangePage = useCallback(
     (_, page) => {
-      void router.push(`/blog/page/${page}`);
+      void router.push(`/blog/page/${page}`)
     },
     [router]
-  );
+  )
 
   return (
     <div className="flex justify-center">
@@ -26,7 +26,7 @@ const DynamicPagination = ({ totalCount }: { totalCount: number }) => {
         onChange={handleChangePage}
       />
     </div>
-  );
-};
+  )
+}
 
-export default DynamicPagination;
+export default DynamicPagination

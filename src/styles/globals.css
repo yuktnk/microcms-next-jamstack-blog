@@ -11,7 +11,7 @@ body {
   padding: 0;
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -28,12 +28,10 @@ a:hover {
 }
 
 header {
-  background-image: url("/images/hydrangea.jpg");
+  background-image: url('/images/hydrangea.jpg');
   background-position: center;
   background-size: cover;
 }
-
-
 
 ::-webkit-scrollbar {
   height: 10px;
@@ -42,7 +40,7 @@ header {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 100px;
-  background: #E3E3E3;
+  background: #e3e3e3;
   /* &:hover {
     cursor: pointer;
     background: rgba(darken(#E3E3E3, 10%), 0.95);
@@ -50,7 +48,6 @@ header {
 }
 
 * {
-  scrollbar-width: 10px;/*細さ*/
-  scrollbar-color: #E3E3E3 #20232a;/*つまみの色 軌道の色*/
+  scrollbar-width: 10px; /*細さ*/
+  scrollbar-color: #e3e3e3 #20232a; /*つまみの色 軌道の色*/
 }
-

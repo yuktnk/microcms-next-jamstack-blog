@@ -1,18 +1,18 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from '@material-ui/core/styles'
 
 export const MyTheme = createTheme({
   palette: {
-    type: "dark",
+    type: 'dark',
     primary: {
-      light: "##ffacff",
-      main: "##e47afa",
-      dark: "##b049c7",
+      light: '##ffacff',
+      main: '##e47afa',
+      dark: '##b049c7',
       // contrastText: "#000000",
     },
     secondary: {
-      light: "#9affff",
-      main: "#61dafb",
-      dark: "#10a8c8",
+      light: '#9affff',
+      main: '#61dafb',
+      dark: '#10a8c8',
       // contrastText: "#000000",
     },
     background: {
@@ -21,7 +21,7 @@ export const MyTheme = createTheme({
   },
   typography: {
     button: {
-      textTransform: "none" // Material UIで生成されるボタンの英字が大文字になることを防ぐ
-    }
-  }
-});
+      textTransform: 'none', // Material UIで生成されるボタンの英字が大文字になることを防ぐ
+    },
+  },
+})

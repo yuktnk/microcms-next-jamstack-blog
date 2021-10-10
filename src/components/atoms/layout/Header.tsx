@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Link from 'next/link'
+import Button from '@material-ui/core/Button'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
 
 const Header = () => {
   return (
@@ -32,7 +32,7 @@ const Header = () => {
       </div>
       {/* <p className="bg-grayBlue03 text-white text-center p-2">ここにテキスト</p> */}
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

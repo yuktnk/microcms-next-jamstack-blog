@@ -1,17 +1,17 @@
-import { NextPage } from "next";
-import Head from "next/head";
-import { Header, Footer } from "./atoms/";
-import { ThemeProvider } from "@material-ui/styles";
-import { MyTheme } from "./theme";
-import Box from "@material-ui/core/Box";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { NextPage } from 'next'
+import Head from 'next/head'
+import { Header, Footer } from './atoms/'
+import { ThemeProvider } from '@material-ui/styles'
+import { MyTheme } from './theme'
+import Box from '@material-ui/core/Box'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 // meta
-export const siteTitle = "tanipu blog";
-export const siteURL = "https://www.tanipu-blog.com/";
+export const siteTitle = 'tanipu blog'
+export const siteURL = 'https://www.tanipu-blog.com/'
 export const metaDescription =
-  "なんちゃってフロントエンドエンジニアが学習していることについてアウトプットするブログです。";
-export const metaKeywords = "フロントエンド エンジニア Next.js React microCMS tanipu";
+  'なんちゃってフロントエンドエンジニアが学習していることについてアウトプットするブログです。'
+export const metaKeywords = 'フロントエンド エンジニア Next.js React microCMS tanipu'
 
 const Layout = ({ children, home }: { children: React.ReactNode; home?: boolean }) => {
   return (
@@ -44,7 +44,7 @@ const Layout = ({ children, home }: { children: React.ReactNode; home?: boolean 
       </Box>
       <Footer />
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

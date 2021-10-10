@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../../components/layout";
-import { client } from "../../libs/client";
-import { Contents, Sidebar } from "../../components/organisms/index";
-import Card from "@material-ui/core/Card";
+import Head from 'next/head'
+import Layout, { siteTitle } from '../../components/layout'
+import { client } from '../../libs/client'
+import { Contents, Sidebar } from '../../components/organisms/index'
+import Card from '@material-ui/core/Card'
 
 // import { useRouter } from 'next/router';
 
@@ -31,30 +31,30 @@ export default function Home({ articles, categories, totalCount }) {
         <Sidebar categories={categories} />
       </Card>
     </Layout>
-  );
+  )
 }
 
 export const getStaticPaths = async () => {
-  const categoriesData = await client.get({ endpoint: "categories" });
-  const paths = categoriesData.contents.map((category) => `/category/${category.id}`);
-  return { paths, fallback: false };
-};
+  const categoriesData = await client.get({ endpoint: 'categories' })
+  const paths = categoriesData.contents.map((category) => `/category/${category.id}`)
+  return { paths, fallback: false }
+}
 
 // データをテンプレートに受け渡す部分の処理
 export const getStaticProps = async (params) => {
   if (params === undefined) {
-    throw Error("pagesの、ディレクトリ構造かファイル名が間違っています。");
+    throw Error('pagesの、ディレクトリ構造かファイル名が間違っています。')
   }
 
-  const categories = await client.get({ endpoint: "categories" });
+  const categories = await client.get({ endpoint: 'categories' })
 
   const articlesData = await client.get({
-    endpoint: "blog",
+    endpoint: 'blog',
     queries: {
       limit: 3,
       filters: `category[equals]${params.id}`,
     },
-  });
+  })
 
   return {
     props: {
@@ -62,5 +62,5 @@ export const getStaticProps = async (params) => {
       categories: categories.contents,
       totalCount: articlesData.totalCount,
     },
-  };
-};
+  }
+}

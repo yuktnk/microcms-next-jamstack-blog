@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import Card from "@material-ui/core/Card";
-import { Heading02 } from "../../atoms/index";
-import Button from "@material-ui/core/Button";
+import Card from '@material-ui/core/Card'
+import { Heading02 } from '../../atoms/index'
+import Button from '@material-ui/core/Button'
 
 const ContactThanks = () => {
   return (
@@ -10,9 +10,7 @@ const ContactThanks = () => {
       <Card>
         <Heading02 title="お問い合わせありがとうございます。" />
         <div className="px-4 py-8 sm:p-8">
-          <p className="text-base mb-8">
-            この度はお問い合わせメールをお送りいただきありがとうございます。
-          </p>
+          <p className="text-base mb-8">この度はお問い合わせメールをお送りいただきありがとうございます。</p>
           <p className="text-base mb-8">
             3〜5日以内に、いただいたメールアドレスにご連絡をさせていただきます。
             <br />
@@ -35,7 +33,7 @@ const ContactThanks = () => {
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ContactThanks;
+export default ContactThanks

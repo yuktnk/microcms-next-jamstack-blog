@@ -1,8 +1,8 @@
-import Head from "next/head";
-import { client } from "../../../libs/client";
-import Layout, { siteTitle } from "../../../components/layout";
-import { ContactError, Sidebar } from "../../../components/organisms/index";
-import Card from "@material-ui/core/Card";
+import Head from 'next/head'
+import { client } from '../../../libs/client'
+import Layout, { siteTitle } from '../../../components/layout'
+import { ContactError, Sidebar } from '../../../components/organisms/index'
+import Card from '@material-ui/core/Card'
 
 export default function AboutIndex({ categories }) {
   return (
@@ -15,16 +15,16 @@ export default function AboutIndex({ categories }) {
         <Sidebar categories={categories} />
       </Card>
     </Layout>
-  );
+  )
 }
 
 // データをテンプレートに受け渡す部分の処理
 export const getStaticProps = async () => {
   const articlesData = await client.get({
-    endpoint: "blog",
+    endpoint: 'blog',
     queries: { limit: 3 },
-  });
-  const categories = await client.get({ endpoint: "categories" });
+  })
+  const categories = await client.get({ endpoint: 'categories' })
 
   return {
     props: {
@@ -32,5 +32,5 @@ export const getStaticProps = async () => {
       categories: categories.contents,
       // totalCount: articlesData.totalCount,
     },
-  };
-};
+  }
+}

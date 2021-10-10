@@ -1,26 +1,24 @@
-import React from "react";
-import { Button, Card, TextField } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
-import { useForm, Controller } from "react-hook-form";
-import { NextPage } from "next";
-import * as Yup from "yup";
-import { yupResolver } from "@hookform/resolvers";
-import { Heading02 } from "../../atoms/index";
-import { Contact } from "../../../models/index";
-import { useRouter } from "next/router";
+import React from 'react'
+import { Button, Card, TextField } from '@material-ui/core'
+import SendIcon from '@material-ui/icons/Send'
+import { useForm, Controller } from 'react-hook-form'
+import { NextPage } from 'next'
+import * as Yup from 'yup'
+import { yupResolver } from '@hookform/resolvers'
+import { Heading02 } from '../../atoms/index'
+import { Contact } from '../../../models/index'
+import { useRouter } from 'next/router'
 
 const ContactForm: NextPage = () => {
-  const router = useRouter();
+  const router = useRouter()
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? ''
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("名前は必須項目です"),
-    email: Yup.string()
-      .email("メールアドレスの形式が間違っています")
-      .required("メールアドレスは必須です"),
-    body: Yup.string().required("お問い合わせ内容は必須です"),
-  });
+    name: Yup.string().required('名前は必須項目です'),
+    email: Yup.string().email('メールアドレスの形式が間違っています').required('メールアドレスは必須です'),
+    body: Yup.string().required('お問い合わせ内容は必須です'),
+  })
 
   const onSubmit = async (contact: Contact): Promise<void> => {
     // try {
@@ -38,28 +36,28 @@ const ContactForm: NextPage = () => {
     // }
 
     try {
-      await fetch(baseUrl + "/api/contact", {
-        method: "POST",
+      await fetch(baseUrl + '/api/contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(contact),
       }).then((res) => {
         if (!res.ok) {
-          throw Error(`${res.status} ${res.statusText}`);
+          throw Error(`${res.status} ${res.statusText}`)
         }
-      });
+      })
 
-      void router.push("/contact/thanks");
+      void router.push('/contact/thanks')
     } catch (err) {
-      void router.push("/contact/error");
+      void router.push('/contact/error')
     }
-  };
+  }
 
   const { control, handleSubmit, errors } = useForm<Contact>({
-    mode: "onBlur",
+    mode: 'onBlur',
     resolver: yupResolver(validationSchema),
-  });
+  })
 
   return (
     <div className="w-full sm:w-2/3 px-4 sm:pl-0 sm:pr-4 py-4 sm:py-0">
@@ -121,20 +119,14 @@ const ContactForm: NextPage = () => {
             />
             {errors.body && <p className="text-errorRed text-xs mt-2">{errors.body.message}</p>}
           </div>
-          <Button
-            type="submit"
-            variant="contained"
-            aria-label="送信"
-            className="mx-auto block"
-            color="secondary"
-          >
+          <Button type="submit" variant="contained" aria-label="送信" className="mx-auto block" color="secondary">
             Send
             <SendIcon className="w-4 ml-2" />
           </Button>
         </form>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

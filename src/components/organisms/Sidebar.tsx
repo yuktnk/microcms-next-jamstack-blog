@@ -1,13 +1,13 @@
-import Image from "next/image";
-import { Heading03 } from "../atoms/index";
-import { SNS } from "../molecules/index";
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
+import Image from 'next/image'
+import { Heading03 } from '../atoms/index'
+import { SNS } from '../molecules/index'
+import Button from '@material-ui/core/Button'
+import Card from '@material-ui/core/Card'
 
 type categoryObjectType = {
-  id: string;
-  name: string;
-};
+  id: string
+  name: string
+}
 
 const Sidebar = ({ categories }: { categories: [] }) => {
   return (
@@ -28,13 +28,7 @@ const Sidebar = ({ categories }: { categories: [] }) => {
           </p>
           <SNS />
           <figure className="absolute -top-12 left-1/2 transform -translate-x-1/2 h-28 w-28 border border-materialBackground02 rounded-full">
-            <Image
-              src="/images/person.jpg"
-              alt="tanipu"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-full"
-            />
+            <Image src="/images/person.jpg" alt="tanipu" layout="fill" objectFit="cover" className="rounded-full" />
           </figure>
         </div>
       </Card>
@@ -68,7 +62,7 @@ const Sidebar = ({ categories }: { categories: [] }) => {
         </ul>
       </Card>
     </aside>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

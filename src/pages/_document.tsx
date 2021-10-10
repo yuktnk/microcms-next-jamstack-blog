@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { GA_TRACKING_ID } from "../libs/gtag";
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { GA_TRACKING_ID } from '../libs/gtag'
 class MyDocument extends Document {
   // static async getInitialProps(ctx) {
   //   const initialProps = await Document.getInitialProps(ctx)
@@ -34,8 +34,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

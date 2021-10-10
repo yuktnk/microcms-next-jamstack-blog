@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import Card from "@material-ui/core/Card";
-import { Heading02 } from "../../atoms/index";
-import Button from "@material-ui/core/Button";
+import Card from '@material-ui/core/Card'
+import { Heading02 } from '../../atoms/index'
+import Button from '@material-ui/core/Button'
 
 const ContactError = () => {
   return (
@@ -10,13 +10,9 @@ const ContactError = () => {
       <Card>
         <Heading02 title="送信エラーが発生しました。" />
         <div className="px-4 py-8 sm:p-8">
-          <p className="text-base mb-8">
-            この度はお問い合わせメールをお送りいただきありがとうございます。
-          </p>
+          <p className="text-base mb-8">この度はお問い合わせメールをお送りいただきありがとうございます。</p>
           <p className="text-base mb-8">誠に申し訳ございません。</p>
-          <p className="text-base mb-8">
-            なんらかのシステムエラーが発生している可能性がございます。
-          </p>
+          <p className="text-base mb-8">なんらかのシステムエラーが発生している可能性がございます。</p>
           <p className="text-base mb-8">
             お手数をおかけしてしまい申し訳ございませんが、下記メールアドレスに直接ご連絡いただけますと幸いです。。
           </p>
@@ -31,7 +27,7 @@ const ContactError = () => {
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ContactError;
+export default ContactError

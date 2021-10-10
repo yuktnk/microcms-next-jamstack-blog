@@ -1,5 +1,5 @@
-import Card from "@material-ui/core/Card";
-import { Heading02 } from "../atoms/index";
+import Card from '@material-ui/core/Card'
+import { Heading02 } from '../atoms/index'
 
 const About = () => {
   return (
@@ -45,7 +45,7 @@ const About = () => {
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About
