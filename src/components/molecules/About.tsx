@@ -8,7 +8,7 @@ const About = () => {
         <Heading02 title="プロフィール" />
         <div className="px-4 py-8 sm:p-8">
           <h3 className="text-xl">◇ 名前</h3>
-          <p className="text-base mb-12 mt-4">tanipu</p>
+          <p className="text-base mb-12 mt-4">yuktnk</p>
 
           <h3 className="text-xl">◇ 直近の経歴</h3>
           <p className="text-base mb-12 mt-4">

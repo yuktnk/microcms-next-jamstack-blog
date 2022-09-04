@@ -17,7 +17,7 @@ const Sidebar = ({ categories }: { categories: [] }) => {
           <Image src="/images/profile.jpg" alt="背景画像" layout="fill" objectFit="cover" />
         </figure>
         <div className="py-8 px-4 sm:p-8 relative">
-          <p className="pt-8 pb-4 font-bold text-center text-xl">tanipu</p>
+          <p className="pt-8 pb-4 font-bold text-center text-xl">yuktnk</p>
           <p className="text-sm sm:text-base text-center mb-4">
             都内受託開発企業に在籍中
             <br />
@@ -28,7 +28,7 @@ const Sidebar = ({ categories }: { categories: [] }) => {
           </p>
           <SNS />
           <figure className="absolute -top-12 left-1/2 transform -translate-x-1/2 h-28 w-28 border border-materialBackground02 rounded-full">
-            <Image src="/images/person.jpg" alt="tanipu" layout="fill" objectFit="cover" className="rounded-full" />
+            <Image src="/images/person.jpg" alt="yuktnk" layout="fill" objectFit="cover" className="rounded-full" />
           </figure>
         </div>
       </Card>

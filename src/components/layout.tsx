@@ -6,11 +6,11 @@ import Box from '@mui/material/Box'
 import CssBaseline from '@mui/material/CssBaseline'
 
 // meta
-export const siteTitle = 'tanipu blog'
+export const siteTitle = 'yuktnk blog'
 export const siteURL = 'https://www.tanipu-blog.com/'
 export const metaDescription =
   'なんちゃってフロントエンドエンジニアが学習していることについてアウトプットするブログです。'
-export const metaKeywords = 'フロントエンド エンジニア Next.js React microCMS tanipu'
+export const metaKeywords = 'フロントエンド エンジニア Next.js React microCMS yuktnk'
 
 const Layout = ({ children, home }: { children: React.ReactNode; home?: boolean }) => {
   return (
