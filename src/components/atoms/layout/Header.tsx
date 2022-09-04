@@ -7,7 +7,7 @@ const Header = () => {
     <header className="w-full h-96 ">
       <div className="pt-4 h-full bg-black bg-opacity-20">
         <Link href={`/`}>
-          <a className="block text-baseBlue text-center text-1xl font-montserrat">yuktnk blog</a>
+          <a className="block text-baseBlue text-center  font-montserrat">yuktnk blog</a>
         </Link>
         <p className="text-center my-1 font-bold">
           一年越しにリニューアルしようと思ったけど
@@ -18,7 +18,12 @@ const Header = () => {
           <br />
           手間がかかりそうなので近々Closeする予定のぶろぐ
           <br />
-          （つまり俺は少しは成長したということ）
+          <a
+            className="block text-center text-2xl text-baseBlue"
+            href="https://github.com/yuktnk/microcms-next-jamstack-blog/blob/main/README.md"
+          >
+            README
+          </a>
         </p>
         <nav className="flex justify-center">
           <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
