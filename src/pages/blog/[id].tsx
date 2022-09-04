@@ -59,7 +59,7 @@ const BlogId: NextPage<PropsType> = (props: PropsType) => {
               className={styles.post}
             />
           </div>
-          <Button variant="contained" className="my-12 mx-auto block">
+          <Button variant="contained" className="my-12 mx-auto block bg-white">
             <Link href="/">
               <a>topへ戻る</a>
             </Link>
