@@ -5,10 +5,9 @@ import ButtonGroup from '@mui/material/ButtonGroup'
 const Header = () => {
   return (
     <header className="w-full h-96 ">
-      {/* <p className="text-center text-sm ">説明文説明文説明文説明文説明文</p> */}
       <div className="pt-16 h-full bg-black bg-opacity-20">
         <Link href={`/`}>
-          <a className="block text-baseBlue text-center text-5xl pt-4 font-montserrat">tanipu blog</a>
+          <a className="block text-baseBlue text-center text-5xl pt-4 font-montserrat">yuktnk blog</a>
         </Link>
         <nav className="flex justify-center py-8">
           <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
@@ -17,20 +16,9 @@ const Header = () => {
                 <a className="block sm:px-8 px-2">Home</a>
               </Link>
             </Button>
-            <Button>
-              <Link href={`/about`}>
-                <a className="block sm:px-8 px-2">About</a>
-              </Link>
-            </Button>
-            <Button>
-              <Link href={`/contact`}>
-                <a className="block sm:px-8 px-2">Contact</a>
-              </Link>
-            </Button>
           </ButtonGroup>
         </nav>
       </div>
-      {/* <p className="bg-grayBlue03 text-white text-center p-2">ここにテキスト</p> */}
     </header>
   )
 }
