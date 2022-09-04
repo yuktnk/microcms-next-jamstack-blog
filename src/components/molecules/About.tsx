@@ -1,4 +1,4 @@
-import Card from '@material-ui/core/Card'
+import Card from '@mui/material/Card'
 import { Heading02 } from '../atoms/index'
 
 const About = () => {

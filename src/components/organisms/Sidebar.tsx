@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { Heading03 } from '../atoms/index'
 import { SNS } from '../molecules/index'
-import Button from '@material-ui/core/Button'
-import Card from '@material-ui/core/Card'
+import Button from '@mui/material/Button'
+import Card from '@mui/material/Card'
 
 type categoryObjectType = {
   id: string

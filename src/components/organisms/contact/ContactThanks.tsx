@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import Card from '@material-ui/core/Card'
+import Card from '@mui/material/Card'
 import { Heading02 } from '../../atoms/index'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 
 const ContactThanks = () => {
   return (

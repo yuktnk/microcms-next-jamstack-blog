@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button, Card, TextField } from '@material-ui/core'
-import SendIcon from '@material-ui/icons/Send'
+import { Button, Card, TextField } from '@mui/material'
+import SendIcon from '@mui/icons-material/Send'
 import { useForm, Controller } from 'react-hook-form'
 import { NextPage } from 'next'
 import * as Yup from 'yup'

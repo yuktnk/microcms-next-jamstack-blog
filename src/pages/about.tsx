@@ -3,7 +3,7 @@ import { client } from '../libs/client'
 import Layout, { siteTitle } from '../components/layout'
 import { About } from '../components/molecules/index'
 import { Sidebar } from '../components/organisms/index'
-import Card from '@material-ui/core/Card'
+import Card from '@mui/material/Card'
 
 export default function AboutIndex({ categories }: { categories: [] }) {
   return (
