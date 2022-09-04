@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Header, Footer } from './atoms/'
-import { ThemeProvider } from '@material-ui/styles'
+import { ThemeProvider } from '@material-ui/core/styles'
 import { MyTheme } from './theme'
 import Box from '@material-ui/core/Box'
 import CssBaseline from '@material-ui/core/CssBaseline'
