@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Date from '../../date'
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import ScheduleIcon from '@material-ui/icons/Schedule'
+import Card from '@mui/material/Card'
+import CardActionArea from '@mui/material/CardActionArea'
+import ScheduleIcon from '@mui/icons-material/Schedule'
 
 type ArticleType = {
   id: number

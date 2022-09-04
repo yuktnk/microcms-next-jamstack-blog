@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import { client } from '../libs/client'
 import { Contents, Sidebar } from '../components/organisms/index'
-import Card from '@material-ui/core/Card'
+import Card from '@mui/material/Card'
 
 export default function Home({ articles, categories, totalCount }) {
   return (

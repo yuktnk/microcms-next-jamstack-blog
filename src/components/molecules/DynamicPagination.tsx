@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { Pagination } from '@material-ui/lab'
+import { Pagination } from '@mui/lab'
 import React, { useCallback } from 'react'
 
 const DynamicPagination = ({ totalCount }: { totalCount: number }) => {
