@@ -1,7 +1,7 @@
 import { NextApiResponse, NextApiRequest } from 'next'
 import { isContact } from '../../utils/TypeGuardUtils'
 
-const contact = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
+const contact = async (req: NextApiRequest, res: NextApiResponse) => {
   const WRITE_API_KEY = process.env.WRITE_API_KEY
 
   // クエリとAPIキーのチェック
